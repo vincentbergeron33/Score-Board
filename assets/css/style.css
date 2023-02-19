@@ -141,7 +141,85 @@ body {
     margin: auto;
     font-size: 1vw;
 }
+/* End of style of score and period panel*/
 
+/* style for shot panel*/
+/* style for shot team 1 + main div style*/
+
+#shot-panel {
+    display: inline-block;
+    width: 100%;
+    height: 9vw;
+    margin: 1vw auto 0;
+    border-style: solid;
+    border-width: medium;
+    border-color: blue;
+    text-align: center;
+    position: relative;
+}
+#shot-panel > div {
+    display: inline-block;
+}
+
+/* Style team 1*/
+
+#shot-team-1 {
+    width:45%;
+    height: 100%;
+}
+
+#border-shot-team-1 {
+    width: 30%;
+    height: 80%;
+    margin: auto;
+    border-style: solid;
+    border-width: medium;
+    border-color: blue;
+}
+
+#shot-team-1-number {
+    width:100%;
+    height: 70%;
+    margin: auto;
+    font-size: 4vw;
+}
+
+#adjust-shot-team-1 {
+    width: 100%;
+    height: 20%;
+    margin: auto;
+    font-size: 1vw;
+}
+
+/* style shot team 2*/
+
+#shot-team-2 {
+    width:45%;
+    height: 100%;
+}
+
+#border-shot-team-2 {
+    width: 30%;
+    height: 80%;
+    margin: auto;
+    border-style: solid;
+    border-width: medium;
+    border-color: blue;
+}
+
+#shot-team-2-number {
+    width:100%;
+    height: 70%;
+    margin: auto;
+    font-size: 4vw;
+}
+
+#adjust-shot-team-2 {
+    width: 100%;
+    height: 20%;
+    margin: auto;
+    font-size: 1vw;
+}
  /* Style of the buttons */
 
  .btn {
