@@ -5,37 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Hockey Scoreboard</title>
 </head>
 <body>
     <section id="time-panel">
-        <div id="timer"></div>
+        <div id="timer">Time</div>
         <div id="control-time">
-            <button id="set-time" class="btn"></button>
-            <button id="play-time" class="btn"></button>
-            <button id="stop-time" class="btn"></button>  
+            <button id="set-time" class="btn">
+                <i class="fa-solid fa-gear"></i>
+            </button>
+            <button id="play-time" class="btn">
+                <i class="fa-sharp fa-solid fa-play"></i>
+            </button>
+            <button id="stop-time" class="btn">
+                <i class="fa-sharp fa-solid fa-stop"></i>
+            </button>  
         </div>
     </section>
     <section id="score-and-period">
         <div id="score-team-1">
             <div id="goal-team-1"></div>
             <div id="adjust-score-team-1">
-                <button id="increment-score-team-1"></button>
-                <button id="reduce-score-team-1"></button>
+                <button id="increment-score-team-1">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <button id="reduce-score-team-1">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
             </div>
         </div>
         <div id="period">
             <div id="period-number"></div>
             <div id="adjust-period">
-                <button id="increment-period"></button>
-                <button id="reduce-period"></button>
+                <button id="increment-period">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <button id="reduce-period">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
         </div>
         <div id="score-team-2">
             <div id="goal-team-2"></div>
             <div id="adjust-score-team-2">
-                <button id="increment-score-team-2"></button>
-                <button id="reduce-score-team-2"></button>
+                <button id="increment-score-team-2">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <button id="reduce-score-team-2">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -43,26 +60,54 @@
         <div id="shot-team-1">
             <div id="shot-team-1-number"></div>
             <div id="adjust-shot-team-1">
-                <button id="increment-shot-team-1"></button>
-                <button id="reduce-shot-team-1"></button>
+                <button id="increment-shot-team-1">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <button id="reduce-shot-team-1">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
             </div>
         </div>
         <div id="shot-team-2">
             <div id="shot-team-2-number"></div>
             <div id="adjust-shot-team-2">
-                <button id="increment-shot-team-2"></button>
-                <button id="reduce-shot-team-2"></button>
+                <button id="increment-shot-team-2">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <button id="reduce-shot-team-2">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
             </div>
         </div>
     </setion>
     <section id="penality-panel">
         <div id="penality-team-1"></div>
         <div id="penality-setting">
-            <button id="set-penality"></button>
+            <button id="set-penality">
+                <i class="fa-solid fa-handcuffs"></i>
+            </button>
         </div>
         <div id="penality-team-2"></div>
     </section>
-    
+    <section id="rooster">
+        <div id="team-1-rooster">
+            <div id="rooster-details-team-1"></div>
+            <div id="rooster-setting-team-1">
+                <button id="set-rooster-team-1">
+                    <i class="fa-solid fa-user-plus"></i>
+                </button>
+            </div>
+        </div>
+        <div id="team-2-rooster">
+            <div id="rooster-details-team-2"></div>
+            <div id="rooster-setting-team-2">
+                <button id="set-rooster-team-2">
+                    <i class="fa-solid fa-user-plus"></i>
+                </button>
+            </div>
+        </div>
+    </section>
     <script src="assets/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/3142d29705.js" crossorigin="anonymous"></script>
 </body>
 </html>
