@@ -8,102 +8,128 @@
     <title>Hockey Scoreboard</title>
 </head>
 <body>
-    <section id="time-panel">
-        <div id="timer">Time</div>
-        <div id="control-time">
-            <button id="set-time" class="btn">
-                <i class="fa-solid fa-gear"></i>
-            </button>
-            <button id="play-time" class="btn">
-                <i class="fa-sharp fa-solid fa-play"></i>
-            </button>
-            <button id="stop-time" class="btn">
-                <i class="fa-sharp fa-solid fa-stop"></i>
-            </button>  
+    <section id="scoreboard">
+        <div id="time-panel">
+
+            <div id="timer">Time</div>
+
+            <div id="control-time">
+                <button id="set-time" class="btn">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <button id="play-time" class="btn">
+                    <i class="fa-sharp fa-solid fa-play"></i>
+                </button>
+                <button id="stop-time" class="btn">
+                    <i class="fa-sharp fa-solid fa-stop"></i>
+                </button>  
+            </div>
+
+        </div>
+
+        <div id="score-and-period">
+
+            <div id="score-team-1">
+                <div id="goal-team-1"></div>
+                <div id="adjust-score-team-1">
+                    <button id="increment-score-team-1">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <button id="reduce-score-team-1">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="period">
+                <div id="period-number"></div>
+                <div id="adjust-period">
+                    <button id="increment-period">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <button id="reduce-period">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="score-team-2">
+                <div id="goal-team-2"></div>
+                <div id="adjust-score-team-2">
+                    <button id="increment-score-team-2">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <button id="reduce-score-team-2">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="shot-panel">
+
+            <div id="shot-team-1">
+                <div id="shot-team-1-number"></div>
+                <div id="adjust-shot-team-1">
+                    <button id="increment-shot-team-1">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <button id="reduce-shot-team-1">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="shot-team-2">
+                <div id="shot-team-2-number"></div>
+                <div id="adjust-shot-team-2">
+                    <button id="increment-shot-team-2">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <button id="reduce-shot-team-2">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="penality-panel">
+
+            <div id="penality-team-1"></div>
+
+            <div id="penality-setting">
+                <button id="set-penality">
+                    <i class="fa-solid fa-handcuffs"></i>
+                </button>
+            </div>
+
+            <div id="penality-team-2"></div>
+
         </div>
     </section>
-    <section id="score-and-period">
-        <div id="score-team-1">
-            <div id="goal-team-1"></div>
-            <div id="adjust-score-team-1">
-                <button id="increment-score-team-1">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-                <button id="reduce-score-team-1">
-                    <i class="fa-solid fa-minus"></i>
-                </button>
+    <section id="section-rooster">
+
+        <div id="rooster">
+
+            <div id="team-1-rooster">
+                <div id="rooster-details-team-1"></div>
+                <div id="rooster-setting-team-1">
+                    <button id="set-rooster-team-1">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </button>
+                </div>
             </div>
-        </div>
-        <div id="period">
-            <div id="period-number"></div>
-            <div id="adjust-period">
-                <button id="increment-period">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-                <button id="reduce-period">
-                    <i class="fa-solid fa-minus"></i>
-                </button>
-        </div>
-        <div id="score-team-2">
-            <div id="goal-team-2"></div>
-            <div id="adjust-score-team-2">
-                <button id="increment-score-team-2">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-                <button id="reduce-score-team-2">
-                    <i class="fa-solid fa-minus"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-    <section id="shot-panel">
-        <div id="shot-team-1">
-            <div id="shot-team-1-number"></div>
-            <div id="adjust-shot-team-1">
-                <button id="increment-shot-team-1">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-                <button id="reduce-shot-team-1">
-                    <i class="fa-solid fa-minus"></i>
-                </button>
-            </div>
-        </div>
-        <div id="shot-team-2">
-            <div id="shot-team-2-number"></div>
-            <div id="adjust-shot-team-2">
-                <button id="increment-shot-team-2">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-                <button id="reduce-shot-team-2">
-                    <i class="fa-solid fa-minus"></i>
-                </button>
-            </div>
-        </div>
-    </setion>
-    <section id="penality-panel">
-        <div id="penality-team-1"></div>
-        <div id="penality-setting">
-            <button id="set-penality">
-                <i class="fa-solid fa-handcuffs"></i>
-            </button>
-        </div>
-        <div id="penality-team-2"></div>
-    </section>
-    <section id="rooster">
-        <div id="team-1-rooster">
-            <div id="rooster-details-team-1"></div>
-            <div id="rooster-setting-team-1">
-                <button id="set-rooster-team-1">
-                    <i class="fa-solid fa-user-plus"></i>
-                </button>
-            </div>
-        </div>
-        <div id="team-2-rooster">
-            <div id="rooster-details-team-2"></div>
-            <div id="rooster-setting-team-2">
-                <button id="set-rooster-team-2">
-                    <i class="fa-solid fa-user-plus"></i>
-                </button>
+
+            <div id="team-2-rooster">
+
+                <div id="rooster-details-team-2"></div>
+                <div id="rooster-setting-team-2">
+                    <button id="set-rooster-team-2">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
