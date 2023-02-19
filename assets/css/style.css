@@ -293,6 +293,24 @@ body {
     border-color: blue;
 }
 
+/* End of styling for penality panel*/
+
+/* Style of the rooster*/
+#rooster {
+    display: inline-block;
+    width: 100%;
+    height: 9vw;
+    margin: 1vw auto 0;
+    border-style: solid;
+    border-width: medium;
+    border-color: blue;
+    text-align: center;
+    position: relative;
+}
+#rooster > div {
+    display: inline-block;
+}
+
 /* Style of the buttons */
 
  .btn {
