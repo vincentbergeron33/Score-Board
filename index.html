@@ -9,15 +9,15 @@
     <title>Hockey Scoreboard</title>
 </head>
 <body>
-    <div id="time-panel">
+    <section id="time-panel">
         <div id="timer"></div>
         <div id="control-time">
             <button id="set-time" class="btn"></button>
             <button id="play-time" class="btn"></button>
             <button id="stop-time" class="btn"></button>  
         </div>
-    </div>
-    <div id="score-and-period">
+    </section>
+    <section id="score-and-period">
         <div id="score-team-1">
             <div id="goal-team-1"></div>
             <div id="adjust-score-team-1">
@@ -38,7 +38,30 @@
                 <button id="reduce-score-team-2"></button>
             </div>
         </div>
-    </div>
+    </section>
+    <section id="shot-panel">
+        <div id="shot-team-1">
+            <div id="shot-team-1-number"></div>
+            <div id="adjust-shot-team-1">
+                <button id="increment-shot-team-1"></button>
+                <button id="reduce-shot-team-1"></button>
+            </div>
+        </div>
+        <div id="shot-team-2">
+            <div id="shot-team-2-number"></div>
+            <div id="adjust-shot-team-2">
+                <button id="increment-shot-team-2"></button>
+                <button id="reduce-shot-team-2"></button>
+            </div>
+        </div>
+    </setion>
+    <section id="penality-panel">
+        <div id="penality-team-1"></div>
+        <div id="penality-setting">
+            <button id="set-penality"></button>
+        </div>
+        <div id="penality-team-2"></div>
+    </section>
     
     <script src="assets/js/script.js"></script>
 </body>
