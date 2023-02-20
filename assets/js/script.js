@@ -26,7 +26,9 @@ function startTime() {
     let stop = document.getElementById('stop-time');
     console.log(minute, second, stop)
 
+
     while (second !== 0 || minute !== 0) {
+        setTimeout(function(){
         if (second == 0) {
             second = 59;
             minute--;
@@ -35,15 +37,13 @@ function startTime() {
         } else if (second > 0) {
             second--;
             document.getElementById('seconds').innerHTML = second;
-        } else if (stop.addEventListener("click")) {
+        } else if (stop.addEventListener("click"))
             break;
+        }, 1000);
         }
-        minute =
-        alert("End of period!")
-    }
-
-
+    alert('end of period');
 }
+    
 /**
  * The function will increment the score of team 1
  */
