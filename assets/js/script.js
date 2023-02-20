@@ -14,9 +14,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /**
- * The function will start the time
+ * The function will start the timbreak when the stop button is clicked
  */
+let start = document.getElementById('start-time');
+start.addEventListener('click', startTime);
 
+function startTime() {
+    alert ('Function started');
+    let minute = parseInt(document.getElementById('minutes').innerHTML);
+    let second = parseInt(document.getElementById('seconds').innerHTML);
+    let stop = document.getElementById('stop-time');
+    console.log(minute, second, stop)
+
+    while (second !== 0 || minute !== 0) {
+        if (second == 0) {
+            second = 59;
+            minute--;
+            document.getElementById('seconds').innerHTML = second;
+            document.getElementById('minutes').innerHTML = minute;
+        } else if (second > 0) {
+            second--;
+            document.getElementById('seconds').innerHTML = second;
+        } else if (stop.addEventListener("click")) {
+            break;
+        }
+        minute =
+        alert("End of period!")
+    }
+
+
+}
 /**
  * The function will increment the score of team 1
  */
