@@ -1,7 +1,8 @@
 // Data to be at 0 and time to be at 10 mins when the page loads
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById("timer").innerHTML = '5:00';
+    document.getElementById("minutes").innerHTML = 5;
+    document.getElementById("seconds").innerHTML = '00';
     document.getElementById("goal-team-1").innerHTML = 0;
     document.getElementById("period-number").innerHTML = 0;
     document.getElementById("goal-team-2").innerHTML = 0;
@@ -10,6 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("rooster-details-team-1").innerHTML = '';
     document.getElementById("rooster-details-team-2").innerHTML = '';
 })
+
+
+/**
+ * The function will start the time
+ */
 
 /**
  * The function will increment the score of team 1
