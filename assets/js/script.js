@@ -19,32 +19,42 @@ document.addEventListener('DOMContentLoaded', function() {
 let start = document.getElementById('start-time');
 start.addEventListener('click', startTime);
 
+
+var timer1 = null;
 function startTime() {
-    alert ('Function started');
+
+    timer1 = setTimeout(function()  {
+
     var minutes = parseInt(document.getElementById('minutes').innerHTML);
     var seconds = parseInt(document.getElementById('seconds').innerHTML);
     let stop = document.getElementById('stop-time');
-    console.log(minutes, seconds, stop)
+    console.log(minutes, seconds, stop);
+    stop.addEventListener('click', stopTime);
 
-        if (seconds === 0) {
-            alert('thickMinutes starter')
-            seconds = 59;
-            minutes--;
-            console.log(minutes, seconds);
-            document.getElementById('seconds').innerHTML = seconds;
-            document.getElementById('minutes').innerHTML = minutes;
-            startTime();
+        if (seconds === 0 & minutes !== 0) {
+                seconds = 59;
+                minutes--;
+                console.log(minutes, seconds);
+                document.getElementById('seconds').innerHTML = seconds;
+                document.getElementById('minutes').innerHTML = minutes;
+                startTime();
+
         } else if (seconds > 0) {
-            seconds--;
-            document.getElementById('seconds').innerHTML = seconds;
-            startTime();
-        } else if (seconds === 0 && minutes === 0) {
+                seconds--;
+                document.getElementById('seconds').innerHTML = seconds;
+                startTime();
+
+        } else if (parseInt(seconds) === 0 && parseInt(minutes) === 0) {
             alert('end of period!')
+            document.getElementById('seconds').innerHTML = '00';
         }
-        else if (stop.addEventListener("click"))
-            alert('Stop!')    
+    }, 1000)
 }
-   
+function stopTime() {
+    clearInterval(timer1);
+    timer1 = null;
+}
+
 function thickMinutes() {
             alert('thickMinutes starter')
             seconds = 59;
