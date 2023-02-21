@@ -21,33 +21,41 @@ start.addEventListener('click', startTime);
 
 function startTime() {
     alert ('Function started');
-    var minute = parseInt(document.getElementById('minutes').innerHTML);
-    var second = parseInt(document.getElementById('seconds').innerHTML);
+    var minutes = parseInt(document.getElementById('minutes').innerHTML);
+    var seconds = parseInt(document.getElementById('seconds').innerHTML);
     let stop = document.getElementById('stop-time');
-    console.log(minute, second, stop)
+    console.log(minutes, seconds, stop)
 
-
-    while (second !== 0 || minute !== 0) {
-        if (second == 0) {
-            thickminutes();
-        } else if (second > 0) {
-            thickseconds();
-        } else if (stop.addEventListener("click"))
-            break;
+        if (seconds === 0) {
+            alert('thickMinutes starter')
+            seconds = 59;
+            minutes--;
+            console.log(minutes, seconds);
+            document.getElementById('seconds').innerHTML = seconds;
+            document.getElementById('minutes').innerHTML = minutes;
+            startTime();
+        } else if (seconds > 0) {
+            seconds--;
+            document.getElementById('seconds').innerHTML = seconds;
+            startTime();
+        } else if (seconds === 0 && minutes === 0) {
+            alert('end of period!')
         }
-    alert('end of period');
+        else if (stop.addEventListener("click"))
+            alert('Stop!')    
 }
    
-function thickminutes() {
-            second = 59;
-            minute--;
-            document.getElementById('seconds').innerHTML = second;
-            document.getElementById('minutes').innerHTML = minute;
+function thickMinutes() {
+            alert('thickMinutes starter')
+            seconds = 59;
+            minutes--;
+            document.getElementById('seconds').innerHTML = seconds;
+            document.getElementById('minutes').innerHTML = minutes;
 }
 
-function thickseconds() {
-        second--;
-        document.getElementById('seconds').innerHTML = second;
+function thickSeconds() {
+        seconds--;
+        document.getElementById('seconds').innerHTML = seconds;
 }
 /**
  * The function will increment the score of team 1
