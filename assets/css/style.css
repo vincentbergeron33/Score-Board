@@ -6,6 +6,14 @@ body {
     color: white;
 }
 
+ul {
+    list-style-type: none;
+}
+
+#rooster input {
+    width : 100%;
+}
+
 
 /* style timer panel */
 

@@ -262,7 +262,7 @@ function updateRoosterOne(event) {
     let playerFirstName = document.getElementById('team-one-fname').value;
     let playerLastName = document.getElementById('team-one-lname').value;
 
-    let setRoosterOneList = document.createElement('ol');
+    let setRoosterOneList = document.createElement('ul');
     let setRoosterOneListHTML = `
         <li>#${playerNumber}  ${playerFirstName}  ${playerLastName}</li>
     `
