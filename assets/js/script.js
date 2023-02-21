@@ -21,29 +21,34 @@ start.addEventListener('click', startTime);
 
 function startTime() {
     alert ('Function started');
-    let minute = parseInt(document.getElementById('minutes').innerHTML);
-    let second = parseInt(document.getElementById('seconds').innerHTML);
+    var minute = parseInt(document.getElementById('minutes').innerHTML);
+    var second = parseInt(document.getElementById('seconds').innerHTML);
     let stop = document.getElementById('stop-time');
     console.log(minute, second, stop)
 
 
     while (second !== 0 || minute !== 0) {
-        setTimeout(function(){
         if (second == 0) {
+            thickminutes();
+        } else if (second > 0) {
+            thickseconds();
+        } else if (stop.addEventListener("click"))
+            break;
+        }
+    alert('end of period');
+}
+   
+function thickminutes() {
             second = 59;
             minute--;
             document.getElementById('seconds').innerHTML = second;
             document.getElementById('minutes').innerHTML = minute;
-        } else if (second > 0) {
-            second--;
-            document.getElementById('seconds').innerHTML = second;
-        } else if (stop.addEventListener("click"))
-            break;
-        }, 1000);
-        }
-    alert('end of period');
 }
-    
+
+function thickseconds() {
+        second--;
+        document.getElementById('seconds').innerHTML = second;
+}
 /**
  * The function will increment the score of team 1
  */
