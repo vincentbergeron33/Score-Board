@@ -55,6 +55,9 @@ function stopTime() {
     timer1 = null;
 }
 
+
+
+/*
 function thickMinutes() {
             alert('thickMinutes starter')
             seconds = 59;
@@ -67,6 +70,8 @@ function thickSeconds() {
         seconds--;
         document.getElementById('seconds').innerHTML = seconds;
 }
+*/
+
 /**
  * The function will increment the score of team 1
  */
@@ -94,15 +99,23 @@ function incrementPeriod() {
     if (i==1) {
         /* Timmer = 10 mins*/
         alert('Beginning of Period 1!')
+        document.getElementById("minutes").innerHTML = 10;
+        document.getElementById("seconds").innerHTML = '00';
     } else if (i==2) {
         /* Timmer = 10 mins*/
         alert('Beginning of Period 2!')
+        document.getElementById("minutes").innerHTML = 10;
+        document.getElementById("seconds").innerHTML = '00';
     } else if (i==3) {
         /* Timmer = 10 mins*/
         alert('Beginning of Period 3!')
+        document.getElementById("minutes").innerHTML = 10;
+        document.getElementById("seconds").innerHTML = '00';
     } else if (i==4) {
         /* Timmer = 5 mins*/
         alert('Beginning of Overtime!')
+        document.getElementById("minutes").innerHTML = 5;
+        document.getElementById("seconds").innerHTML = '00';
     }
 }
 
