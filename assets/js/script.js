@@ -64,7 +64,7 @@ function setTimer () {
     alert('function set timer started')
     let setTimerInputHTML = `
         <label for="setMinutes">Minute</label>
-        <input id="setMinute" type="text">
+        <input id="setMinutes" type="text">
         <label for="setSeconds">Seconds</label>
         <input id="setSeconds" type="text">
         <input type='submit'></submit>
@@ -222,3 +222,53 @@ function reduceShotTeamTwo() {
     }
     document.getElementById("shot-team-2-number").innerHTML = i;
 }
+
+/**
+ * Set the rooster for each team
+ */
+
+let setRoosterTeamOneBtn = document.getElementById('set-rooster-team-1');
+setRoosterTeamOneBtn.addEventListener('click', setRoosterOne);
+
+function setRoosterOne () {
+    alert('Set rooster team 1 started')
+    let setRoosterOneInputHTML = `
+        <label for="team-one-number">Player #</label>
+        <input id="team-one-number" type="text">
+        <label for="team-one-fname">First Name</label>
+        <input id="team-one-fname" type="text">
+        <label for="team-one-lname">Last Name</label>
+        <input id="team-one-lname" type="text">
+        <input type='submit'></submit>
+        `
+    
+    let setRoosterOneInput = document.createElement("form");
+    setRoosterOneInput.id = 'submit-team-one';
+    setRoosterOneInput.innerHTML = setRoosterOneInputHTML;
+    document.getElementById('rooster-setting-team-1').appendChild(setRoosterOneInput);
+
+    let subtmitRoosterOne = document.getElementById('submit-team-one');
+    subtmitRoosterOne.addEventListener("submit", updateRoosterOne);
+
+}
+
+
+
+function updateRoosterOne(event) {
+    alert("Function submit team one started");
+    event.preventDefault();   
+
+    let playerNumber = document.getElementById('team-one-number').value;
+    let playerFirstName = document.getElementById('team-one-fname').value;
+    let playerLastName = document.getElementById('team-one-lname').value;
+
+    let setRoosterOneList = document.createElement('ol');
+    let setRoosterOneListHTML = `
+        <li>#${playerNumber}  ${playerFirstName}  ${playerLastName}</li>
+    `
+    setRoosterOneList.innerHTML = setRoosterOneListHTML;
+    document.getElementById('rooster-setting-team-1').appendChild(setRoosterOneList);
+
+    document.getElementById('submit-team-one').remove();
+}
+
