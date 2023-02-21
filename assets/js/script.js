@@ -55,22 +55,52 @@ function stopTime() {
     timer1 = null;
 }
 
+/**
+ * Once clicked the function will create 2 input with a submit button
+ */
+let setTimerBtn = document.getElementById('set-time');
+setTimerBtn.addEventListener('click', setTimer);
+function setTimer () {
+    alert('function set timer started')
+    let setTimerInputHTML = `
+        <label for="setMinutes">Minute</label>
+        <input id="setMinute" type="text">
+        <label for="setSeconds">Seconds</label>
+        <input id="setSeconds" type="text">
+        <input type='submit'></submit>
+        `
+    
+    let setTimerInput = document.createElement("form");
+    setTimerInput.id = 'submit-time';
+    setTimerInput.innerHTML = setTimerInputHTML;
+    document.getElementById('control-time').appendChild(setTimerInput);
 
+    let subtmitTime = document.getElementById('submit-time');
+    subtmitTime.addEventListener("submit", updateTime);
 
-/*
-function thickMinutes() {
-            alert('thickMinutes starter')
-            seconds = 59;
-            minutes--;
-            document.getElementById('seconds').innerHTML = seconds;
-            document.getElementById('minutes').innerHTML = minutes;
 }
 
-function thickSeconds() {
-        seconds--;
-        document.getElementById('seconds').innerHTML = seconds;
+
+
+function updateTime(event) {
+    alert("Function submit started");
+    event.preventDefault();   
+
+    let newMins = document.getElementById('setMinute');
+    let newScds = document.getElementById('setSeconds');
+    if (parseInt(newScds.innerHTML) > 59) {
+        alert('Impossible, please enter valid time!')
+    } else if (parseInt(newMins.innerHTML) > 100) {
+        alert('Be carefull of exhaustion, the game is way too long!')
+    } else {
+        document.getElementById('minutes').innerHTML = newMins.value;
+        document.getElementById('seconds').innerHTML = newScds.value;
+        let divRemove = document.getElementById('control-time');
+        divRemove.removeChild(divRemove.children[3]); 
+    }
 }
-*/
+
+
 
 /**
  * The function will increment the score of team 1
