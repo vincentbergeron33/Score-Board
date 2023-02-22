@@ -20,11 +20,7 @@ __Timer__
 ![Score Board](assets/images/scoreboard.png)
 ![Score Board Setting](assets/images/scoreboard-setting.png)
 
-- This feature doesn't open the page in a different tab and all the pages has it. This is to ensure easy navigation between the pages.
-
-![Nav Bar](assets/images/navigation%20menu.png)
-
-__Home page welcome image__
+__Goal__
 
 - Period 0 has 5 minutes timer to give some time to the player to practice there shot. Period 1,2 and 3 have 10 mins to accomodate most if the ball hockey league time rules. Period 4 has 5 mins
 
