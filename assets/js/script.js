@@ -267,7 +267,7 @@ function updatePenalityBox() {
         alert('team 1 seclected');
         let setPenalityList = document.createElement('ul');
         let setPenalityListHTML = `
-            <li>#${playerNumber} ${penMins}:${penScds}</li>
+            <li>#${playerNumber}-------->${penMins}:${penScds}</li>
         `
         setPenalityList.innerHTML = setPenalityListHTML;
         document.getElementById('penality-players-team-1').appendChild(setPenalityList);
@@ -275,6 +275,14 @@ function updatePenalityBox() {
         document.getElementById('penality-form').remove();
     } else if (team2.checked) {
         alert('team 2 selected');
+        let setPenalityList = document.createElement('ul');
+        let setPenalityListHTML = `
+            <li>#${playerNumber}------->${penMins}:${penScds}</li>
+        `
+        setPenalityList.innerHTML = setPenalityListHTML;
+        document.getElementById('penality-players-team-2').appendChild(setPenalityList);
+    
+        document.getElementById('penality-form').remove();
     }
 
 }

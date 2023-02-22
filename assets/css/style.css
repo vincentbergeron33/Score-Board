@@ -11,12 +11,31 @@ ul {
 }
 
 #rooster input, #rooster label {
-    width : 100%;
+    width : 75%;
 }
 
 #penality-panel input, #penality-panel label {
-    width : 100%;
+    width : 75%;
 }
+
+#penality-players-team-1 ul {
+    font-size: 150%;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    margin: 10;
+    background-color: blue;
+}
+
+#penality-players-team-2 ul {
+    font-size: 150%;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    margin: 10;
+    background-color: blue
+}
+
 
 
 /* style timer panel */
@@ -247,7 +266,7 @@ ul {
 /* Penality Team 1*/
 
 #penality-team-1 {
-    width:35%;
+    width:25%;
     height: 80%;
     margin: auto;
 }
@@ -286,7 +305,7 @@ ul {
 /* Penality team 2 */
 
 #penality-team-2 {
-    width:35%;
+    width:25%;
     height: 80%;
 }
 
