@@ -1,108 +1,175 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Hockey Score Board
 
-Welcome Vincent Bergeron,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![Am I Responsive](assets/images/amiresponsive.png)
 
-## Gitpod Reminders
+## Features
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+The website is a simple ball hockey Score board with program time for each period. The user can add the rooster in the bottom of the score board at the beginning of the game. Once the game has started, the user can easily stop and play the timer, add/remove goal to/from a team, add/remove shot to/from each team. The timer can also be modified manually to accomodate different time rules.
 
-`python3 -m http.server`
+### Existing Features
 
-A blue button should appear to click: _Make Public_,
+__Timer__
 
-Another blue button should appear to click: _Open Browser_.
+- The timer is the biggest object in the page to ensure all players can see the time. The timmer has 3 functions:
+    - Set Time: By click on the setting button, the user can modify the time. If the value of second exceed 60, a error message is sent to the user. If the value of minutes exceed 100, a alert message is sent to the user telling him that the game is way too long but the command is still executed to accomodate user who would like to set up the timer for a 2 hours free play by example.
+    - Play time: The timer start going down by one second for every tick.
+    - Stop time: The timer stop ticking.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+![Score Board](assets/images/scoreboard.png)
+![Score Board Setting](assets/images/scoreboard-setting.png)
 
-A blue button should appear to click: _Make Public_,
+- This feature doesn't open the page in a different tab and all the pages has it. This is to ensure easy navigation between the pages.
 
-Another blue button should appear to click: _Open Browser_.
+![Nav Bar](assets/images/navigation%20menu.png)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+__Home page welcome image__
 
-To log into the Heroku toolbelt CLI:
+- Period 0 has 5 minutes timer to give some time to the player to practice there shot. Period 1,2 and 3 have 10 mins to accomodate most if the ball hockey league time rules. Period 4 has 5 mins
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+![Index Welcome page](assets/images/welcome-image.png)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+__what is crypto Section__
 
-------
+- This section is to explain in a very general view what is cryptocurrency.
 
-## Release History
+- A picture on the side has been put to catch the eyes of the viewer in an original way. The text is on the left and picture on the right. You will find the opposite set up in the section "Type of token".
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+![What is crypto Section](assets/images/what-is-crypto.png)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+__Three sections__
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- This section explains 3 really important definition that are not always understood in the crypto world. 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- The definitions are shorts and aim to get the viewers curious about the subject. A future update of the website aim to add more details on those concepts.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![Three Sections](assets/images/three-sections.png)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+__type of token__
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- this token is an introduction to the list of the token below it.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- It aims to catch the eye and like the "What is crypto section" show the website in an original way. As mentioned above, the text and image are opposite to the other section.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+![Type of Token](assets/images/type-of-token.png)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+__list of token__
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- The list of token follows the same pattern, alternating right to left.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- The description are shorts and aim to get the viewers curious about the subject. Most of them have example so the viewers can understand better the concept and start to know some of the tokens.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![List of Token](assets/images/list-of-token.png)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+__footer__
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- The footer has 4 useful links: Coinmarketcap (Coins encyclopaedia), Binance (Platform), Coinbase (Platform) and Ledger (Solution to store crypto safely). 
 
-------
+- Copyright have also been added into the footer.
 
-## FAQ about the uptime script
+![Footer](assets/images/footer.png)
 
-**Why have you added this script?**
+__Buy Crypto welcome image__
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- The image catches the eyes as it connects us dollars and bitcoin. It makes total sense as the next section on the page will be explaining how to buy crypto with a currency.
 
-**How will this affect me?**
+![Buy Crypto welcome](assets/images/buy-crypto-welcome.png)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+__Buy using an exchange__
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- This section explains that the best way to buy crypto is by exchanges. It shows how important to do research about the exchanges before choosing it.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+- Three criteria are elaborated in this section which are also shown in the table below.
 
-**So….?**
+![Buy using exchanges](assets/images/buy-using-exchanges.png)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+__Exchange table__
 
-**Can I opt out?**
+- To catch the eyes of the viewers and show the details of every exchange in a easy and simple way, a table is shown.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+- Four data are shown in the table: exchange's name, overall rating, financial reserve and deposit bonuses.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+- The viewers understand straight away the table has the data has been explained in the section just above it.
 
-**Anything more?**
+![Exchanges table](assets/images/exchanges-table.png)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+__Report a scam image__
 
----
+- The welcome page covers all the whole page and catch the eyes as it is a bitcoin in the dirt. The dirt represents the though feeling of losing money and being caught in a scam.
 
-Happy coding!
+![Report scam welcome](assets/images/report-scam-welcome.png)
+
+__Report a scam form__
+
+- The form has four entries: First name, Last name, Scam Description, and platform which the scam has happened.
+
+- The reports are put in the database. In a future update of the website, the scams will be shown on the website and an easy search option will be featured for anybody to check if they are going to the same scam that someone else has reported.
+
+![Form Scam](assets/images/form-scam.png)
+
+### Features left to implement
+
+- The database of the scams shown directly on the website.
+
+- A search feature to find a scam from the database.
+
+- A additional page explaining the main scams that are around in the crypto world.
+
+## Testing
+
+You can find below that all testing has been completed.
+
+### Validator Testing
+
+- HTML validator have been completed and all errors and warnings have been fixed.
+
+![HTML validator](assets/images/HTML-validator.png)
+
+- CSS validator have been completed and no errors or warnings have been found.
+
+![CSS validator](assets/images/CSS-validator.png)
+
+- Lighthouse has been run through all the pages, see the below result:
+
+![Lighthouse](assets/images/lighthouse.png)
+
+- The performance is the only assessment which has not achieved 100 points. Two main factors explain the lack of performance:
+
+    - The size of the images is the main problem as it takes too long for the images to load. Smaller resolution of images should have been used for the website. This was the main problem of the performance and only that change would have boosted greatly the performance.
+    - The CSS files is too heavy. To achieve a perfect performance, CSS file should have been optimised.
+
+### Unfixed Bugs
+
+ - All bugs have been fixed. Performance could be upgraded by using smaller resolution pictures and by optimizing the CSS file.
+
+## Deployment
+
+- The website has been deployed using Github following the below steps
+    -  The files have been prepared using Gitpod
+    -  The files have been pushed to Github using Git commands
+    -  The correct files in the repositories have been selected
+    -  In the setting / page, the source has been put on "Deploy from a branch" and the branch on "main" then click save
+    -  The website is now deployed
+
+The live link can be found here: https://vincentbergeron33.github.io/How-to-avoid-scam-in-Crypto-world/
+
+## Credits
+
+- Code ideas have been taken from the Love Running Website. The codes were never copy/paste. They were developed to follow the configuration of the website.
+
+- Investopedia was used as a reference for the rating of the exchanges.
+
+- Coinmarketcap was used for the financial reserve for the exchanges.
+
+### Content
+
+- The icons in the navigation menu and the scam form were taken from [Font Awesome](https://fontawesome.com/).
+
+- The font family were taken from [Google Fonts](https://fonts.google.com)
+
+### Media
+
+- All pictures were taken from [Pexels](https://www.pexels.com/)
+
+
