@@ -223,6 +223,62 @@ function reduceShotTeamTwo() {
     document.getElementById("shot-team-2-number").innerHTML = i;
 }
 
+/* Set oenality functions*/
+let penalityBtn = document.getElementById('set-penality');
+penalityBtn.addEventListener('click', setPenality);
+
+function setPenality() {
+    alert('set penality function started');
+    let setPenalityInputHTML = `
+    <label for="player-team">Player team</label>
+    <input id="player-team-1" name='team' type="radio" class='radio-btn' required>1
+    <input id="player-team-2" name='team' type="radio" class='radio-btn' required>2
+    <br>
+    <label for="player-number">Player #</label>
+    <input id="player-number" type="number">
+    <label for="Penality-time">Penality Time</label>
+    <input id="pen-mins" type="number">
+    <input id="pen-scds" type="number">
+    <input type='submit'></submit>
+    `
+    let setPenalityInput = document.createElement('form');
+    setPenalityInput.id = 'penality-form';
+    setPenalityInput.innerHTML = setPenalityInputHTML;
+    document.getElementById('penality-border-setting').appendChild(setPenalityInput);
+
+    let subtmitPenality = document.getElementById('penality-form');
+    subtmitPenality.addEventListener("submit", updatePenalityBox);
+
+}
+
+/**
+ * The function will check which team the player is from and update the penality box with the
+ * player # and time
+ */
+
+function updatePenalityBox() {
+    alert('start update peneality box function');
+    let team1 = document.getElementById('player-team-1');
+    let team2 = document.getElementById('player-team-2');
+    let playerNumber = document.getElementById('player-number').value;
+    let penMins = document.getElementById('pen-mins').value;
+    let penScds = document.getElementById('pen-scds').value;
+    if (team1.checked) {
+        alert('team 1 seclected');
+        let setPenalityList = document.createElement('ul');
+        let setPenalityListHTML = `
+            <li>#${playerNumber} ${penMins}:${penScds}</li>
+        `
+        setPenalityList.innerHTML = setPenalityListHTML;
+        document.getElementById('penality-players-team-1').appendChild(setPenalityList);
+    
+        document.getElementById('penality-form').remove();
+    } else if (team2.checked) {
+        alert('team 2 selected');
+    }
+
+}
+
 
  /* Set rooster functions*/
 
@@ -258,9 +314,10 @@ function setRoosterOne () {
 
 }
 
-/**
- * Set the rooster for team1 - Add the HTML from the form into the page
+/** 
+ * add the details to the div and delete the form for team 1
  */
+
 function updateRoosterOne(event) {
     alert("Function submit team one started");
     event.preventDefault();   
@@ -274,7 +331,7 @@ function updateRoosterOne(event) {
         <li>#${playerNumber}  ${playerFirstName}  ${playerLastName}</li>
     `
     setRoosterOneList.innerHTML = setRoosterOneListHTML;
-    document.getElementById('rooster-setting-team-1').appendChild(setRoosterOneList);
+    document.getElementById('rooster-details-team-1').appendChild(setRoosterOneList);
 
     document.getElementById('submit-team-one').remove();
 }
@@ -283,16 +340,18 @@ function updateRoosterOne(event) {
 
 let setRoosterTeamTwoBtn = document.getElementById('set-rooster-team-2');
 setRoosterTeamTwoBtn.addEventListener('click', setRoosterTwo);
-
+/**
+ * Add the form to submit the player 2 details
+ */
 function setRoosterTwo () {
     alert('Set rooster team 2 started')
     let setRoosterTwoInputHTML = `
-        <label for="team-one-number">Player #</label>
-        <input id="team-one-number" type="text">
-        <label for="team-one-fname">First Name</label>
-        <input id="team-one-fname" type="text">
-        <label for="team-one-lname">Last Name</label>
-        <input id="team-one-lname" type="text">
+        <label for="team-two-number">Player #</label>
+        <input id="team-two-number" type="text">
+        <label for="team-two-fname">First Name</label>
+        <input id="team-two-fname" type="text">
+        <label for="team-two-lname">Last Name</label>
+        <input id="team-two-lname" type="text">
         <input type='submit'></submit>
         `
     
@@ -306,7 +365,9 @@ function setRoosterTwo () {
 
 }
 
-
+/** 
+ * add the details to the div and delete the form for team 2
+ */
 
 function updateRoosterTwo(event) {
     alert("Function submit team one started");
@@ -321,7 +382,7 @@ function updateRoosterTwo(event) {
         <li>#${playerNumberTwo}  ${playerFirstNameTwo}  ${playerLastNameTwo}</li>
     `
     setRoosterTwoList.innerHTML = setRoosterTwoListHTML;
-    document.getElementById('rooster-setting-team-2').appendChild(setRoosterTwoList);
+    document.getElementById('rooster-details-team-2').appendChild(setRoosterTwoList);
 
     document.getElementById('submit-team-two').remove();
 }
