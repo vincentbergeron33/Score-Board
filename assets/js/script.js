@@ -61,9 +61,8 @@ function stopTime() {
 let setTimerBtn = document.getElementById('set-time');
 setTimerBtn.addEventListener('click', setTimer);
 function setTimer () {
-    alert('function set timer started')
     let setTimerInputHTML = `
-        <label for="setMinutes">Minute</label>
+        <label for="setMinutes">Minutes</label>
         <input id="setMinutes" type="text">
         <label for="setSeconds">Seconds</label>
         <input id="setSeconds" type="text">
@@ -86,17 +85,19 @@ function updateTime(event) {
     alert("Function submit started");
     event.preventDefault();   
 
-    let newMins = document.getElementById('setMinute');
-    let newScds = document.getElementById('setSeconds');
-    if (parseInt(newScds.innerHTML) > 59) {
-        alert('Impossible, please enter valid time!')
-    } else if (parseInt(newMins.innerHTML) > 100) {
-        alert('Be carefull of exhaustion, the game is way too long!')
+    var newMins = document.getElementById('setMinutes');
+    var newScds = document.getElementById('setSeconds');
+    if (parseInt(newScds.value) >= 60) {
+        alert('Impossible, please enter valid time!');
+    } else if (parseInt(newMins.value) >= 100) {
+        alert('Be carefull of exhaustion, the game is way too long!');
+        document.getElementById('minutes').innerHTML = newMins.value;
+        document.getElementById('seconds').innerHTML = newScds.value;
+        document.getElementById('submit-time').remove(); ; 
     } else {
         document.getElementById('minutes').innerHTML = newMins.value;
         document.getElementById('seconds').innerHTML = newScds.value;
-        let divRemove = document.getElementById('control-time');
-        divRemove.removeChild(divRemove.children[3]); 
+        document.getElementById('submit-time').remove(); 
     }
 }
 
@@ -223,71 +224,6 @@ function reduceShotTeamTwo() {
     document.getElementById("shot-team-2-number").innerHTML = i;
 }
 
-/* Set oenality functions*/
-let penalityBtn = document.getElementById('set-penality');
-penalityBtn.addEventListener('click', setPenality);
-
-function setPenality() {
-    alert('set penality function started');
-    let setPenalityInputHTML = `
-    <label for="player-team">Player team</label>
-    <input id="player-team-1" name='team' type="radio" class='radio-btn' required>1
-    <input id="player-team-2" name='team' type="radio" class='radio-btn' required>2
-    <br>
-    <label for="player-number">Player #</label>
-    <input id="player-number" type="number">
-    <label for="Penality-time">Penality Time</label>
-    <input id="pen-mins" type="number">
-    <input id="pen-scds" type="number">
-    <input type='submit'></submit>
-    `
-    let setPenalityInput = document.createElement('form');
-    setPenalityInput.id = 'penality-form';
-    setPenalityInput.innerHTML = setPenalityInputHTML;
-    document.getElementById('penality-border-setting').appendChild(setPenalityInput);
-
-    let subtmitPenality = document.getElementById('penality-form');
-    subtmitPenality.addEventListener("submit", updatePenalityBox);
-
-}
-
-/**
- * The function will check which team the player is from and update the penality box with the
- * player # and time
- */
-
-function updatePenalityBox() {
-    alert('start update peneality box function');
-    let team1 = document.getElementById('player-team-1');
-    let team2 = document.getElementById('player-team-2');
-    let playerNumber = document.getElementById('player-number').value;
-    let penMins = document.getElementById('pen-mins').value;
-    let penScds = document.getElementById('pen-scds').value;
-    if (team1.checked) {
-        alert('team 1 seclected');
-        let setPenalityList = document.createElement('ul');
-        let setPenalityListHTML = `
-            <li>#${playerNumber}-------->${penMins}:${penScds}</li>
-        `
-        setPenalityList.innerHTML = setPenalityListHTML;
-        document.getElementById('penality-players-team-1').appendChild(setPenalityList);
-    
-        document.getElementById('penality-form').remove();
-    } else if (team2.checked) {
-        alert('team 2 selected');
-        let setPenalityList = document.createElement('ul');
-        let setPenalityListHTML = `
-            <li>#${playerNumber}------->${penMins}:${penScds}</li>
-        `
-        setPenalityList.innerHTML = setPenalityListHTML;
-        document.getElementById('penality-players-team-2').appendChild(setPenalityList);
-    
-        document.getElementById('penality-form').remove();
-    }
-
-}
-
-
  /* Set rooster functions*/
 
 
@@ -301,7 +237,6 @@ setRoosterTeamOneBtn.addEventListener('click', setRoosterOne);
  */
 
 function setRoosterOne () {
-    alert('Set rooster team 1 started')
     let setRoosterOneInputHTML = `
         <label for="team-one-number">Player #</label>
         <input id="team-one-number" type="text">
@@ -327,7 +262,6 @@ function setRoosterOne () {
  */
 
 function updateRoosterOne(event) {
-    alert("Function submit team one started");
     event.preventDefault();   
 
     let playerNumber = document.getElementById('team-one-number').value;
@@ -352,7 +286,6 @@ setRoosterTeamTwoBtn.addEventListener('click', setRoosterTwo);
  * Add the form to submit the player 2 details
  */
 function setRoosterTwo () {
-    alert('Set rooster team 2 started')
     let setRoosterTwoInputHTML = `
         <label for="team-two-number">Player #</label>
         <input id="team-two-number" type="text">
@@ -378,7 +311,6 @@ function setRoosterTwo () {
  */
 
 function updateRoosterTwo(event) {
-    alert("Function submit team one started");
     event.preventDefault();   
 
     let playerNumberTwo = document.getElementById('team-two-number').value;
