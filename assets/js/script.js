@@ -223,12 +223,18 @@ function reduceShotTeamTwo() {
     document.getElementById("shot-team-2-number").innerHTML = i;
 }
 
-/**
- * Set the rooster for each team
- */
+
+ /* Set rooster functions*/
+
+
+/* Team 1*/
 
 let setRoosterTeamOneBtn = document.getElementById('set-rooster-team-1');
 setRoosterTeamOneBtn.addEventListener('click', setRoosterOne);
+
+/**
+ * Set the rooster for team1 - Add the HTML form
+ */
 
 function setRoosterOne () {
     alert('Set rooster team 1 started')
@@ -252,8 +258,9 @@ function setRoosterOne () {
 
 }
 
-
-
+/**
+ * Set the rooster for team1 - Add the HTML from the form into the page
+ */
 function updateRoosterOne(event) {
     alert("Function submit team one started");
     event.preventDefault();   
@@ -270,5 +277,52 @@ function updateRoosterOne(event) {
     document.getElementById('rooster-setting-team-1').appendChild(setRoosterOneList);
 
     document.getElementById('submit-team-one').remove();
+}
+
+/* Team 2*/
+
+let setRoosterTeamTwoBtn = document.getElementById('set-rooster-team-2');
+setRoosterTeamTwoBtn.addEventListener('click', setRoosterTwo);
+
+function setRoosterTwo () {
+    alert('Set rooster team 2 started')
+    let setRoosterTwoInputHTML = `
+        <label for="team-one-number">Player #</label>
+        <input id="team-one-number" type="text">
+        <label for="team-one-fname">First Name</label>
+        <input id="team-one-fname" type="text">
+        <label for="team-one-lname">Last Name</label>
+        <input id="team-one-lname" type="text">
+        <input type='submit'></submit>
+        `
+    
+    let setRoosterTwoInput = document.createElement("form");
+    setRoosterTwoInput.id = 'submit-team-two';
+    setRoosterTwoInput.innerHTML = setRoosterTwoInputHTML;
+    document.getElementById('rooster-setting-team-2').appendChild(setRoosterTwoInput);
+
+    let subtmitRoosterTwo = document.getElementById('submit-team-two');
+    subtmitRoosterTwo.addEventListener("submit", updateRoosterTwo);
+
+}
+
+
+
+function updateRoosterTwo(event) {
+    alert("Function submit team one started");
+    event.preventDefault();   
+
+    let playerNumberTwo = document.getElementById('team-two-number').value;
+    let playerFirstNameTwo = document.getElementById('team-two-fname').value;
+    let playerLastNameTwo = document.getElementById('team-two-lname').value;
+
+    let setRoosterTwoList = document.createElement('ul');
+    let setRoosterTwoListHTML = `
+        <li>#${playerNumberTwo}  ${playerFirstNameTwo}  ${playerLastNameTwo}</li>
+    `
+    setRoosterTwoList.innerHTML = setRoosterTwoListHTML;
+    document.getElementById('rooster-setting-team-2').appendChild(setRoosterTwoList);
+
+    document.getElementById('submit-team-two').remove();
 }
 
