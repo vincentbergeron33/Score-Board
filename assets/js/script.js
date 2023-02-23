@@ -82,7 +82,6 @@ function setTimer () {
 
 
 function updateTime(event) {
-    alert("Function submit started");
     event.preventDefault();   
 
     var newMins = document.getElementById('setMinutes');
