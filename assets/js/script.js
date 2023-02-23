@@ -63,9 +63,9 @@ setTimerBtn.addEventListener('click', setTimer);
 function setTimer () {
     let setTimerInputHTML = `
         <label for="setMinutes">Minutes</label>
-        <input id="setMinutes" type="text" required>
+        <input id="setMinutes" type="number" required>
         <label for="setSeconds" required>Seconds</label>
-        <input id="setSeconds" type="text">
+        <input id="setSeconds" type="number" required>
         <input type='submit'></submit>
         `
     
@@ -238,7 +238,7 @@ setRoosterTeamOneBtn.addEventListener('click', setRoosterOne);
 function setRoosterOne () {
     let setRoosterOneInputHTML = `
         <label for="team-one-number">Player #</label>
-        <input id="team-one-number" type="text" required>
+        <input id="team-one-number" type="number" required>
         <label for="team-one-fname">First Name</label>
         <input id="team-one-fname" type="text" required>
         <label for="team-one-lname">Last Name</label>
@@ -287,7 +287,7 @@ setRoosterTeamTwoBtn.addEventListener('click', setRoosterTwo);
 function setRoosterTwo () {
     let setRoosterTwoInputHTML = `
         <label for="team-two-number">Player #</label>
-        <input id="team-two-number" type="text" required>
+        <input id="team-two-number" type="number" required>
         <label for="team-two-fname">First Name</label>
         <input id="team-two-fname" type="text" required>
         <label for="team-two-lname">Last Name</label>
