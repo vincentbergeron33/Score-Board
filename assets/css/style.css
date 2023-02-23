@@ -6,6 +6,25 @@ body {
     color: white;
 }
 
+/* Style of the buttons */
+
+.btn {
+    color:blue;
+    margin: auto;
+    font-size: 1vw;
+ }
+
+.btn:hover {
+    background-color: black;
+    color:white;
+ }
+
+ /* Style for label to ensure they are responsive*/
+
+ h2 {
+    font-size: 1vw;
+ }
+
 ul {
     list-style-type: none;
 }
@@ -13,30 +32,6 @@ ul {
 #rooster input, #rooster label {
     width : 100%;
 }
-
-#penality-panel input, #penality-panel label {
-    width : 75%;
-}
-
-#penality-players-team-1 ul {
-    font-size: 150%;
-    text-align: left;
-    width: 100%;
-    height: 100%;
-    margin: 10;
-    background-color: blue;
-}
-
-#penality-players-team-2 ul {
-    font-size: 150%;
-    text-align: left;
-    width: 100%;
-    height: 100%;
-    margin: 10;
-    background-color: blue
-}
-
-
 
 /* style timer panel */
 
@@ -274,26 +269,6 @@ ul {
     width:45%;
     height: 100%;
 }
-
-
-/* Style of the buttons */
-
- .btn {
-    color:blue;
-    margin: auto;
-    font-size: 1vw;
- }
-
-.btn:hover {
-    background-color: black;
-    color:white;
- }
-
- /* Style for label to ensure they are responsive*/
-
- label {
-    font-size: 1vw;
- }
 
  /* Responsive for all size of screen*/
 

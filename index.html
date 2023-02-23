@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hockey Score Board">
+    <meta name="keywords" content="hockey, ball hockey, Score Board, goal, shot, penality, player details">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Hockey Scoreboard</title>
 </head>
@@ -14,13 +16,13 @@
             <div id="timer"><span id='minutes'></span>:<span id='seconds'></span></div>
 
             <div id="control-time">
-                <button id="set-time" class="btn">
+                <button id="set-time" aria-label="Set the timer" class="btn">
                     <i class="fa-solid fa-gear"></i>
                 </button>
-                <button id="start-time" class="btn">
+                <button id="start-time" aria-label="Start the timer" class="btn">
                     <i class="fa-sharp fa-solid fa-play"></i>
                 </button>
-                <button id="stop-time" class="btn">
+                <button id="stop-time" aria-label="Stop the timer" class="btn">
                     <i class="fa-sharp fa-solid fa-stop"></i>
                 </button>  
             </div>
@@ -30,14 +32,14 @@
         <div id="score-and-period">
 
             <div id="score-team-1">
-                <label for="border-goal-team-1">Score Team 1</label>
+                <h2>Score Team 1</h2>
                 <div id="border-goal-team-1">
                     <div id="goal-team-1"></div>
                     <div id="adjust-score-team-1">
-                        <button id="increment-score-team-1" class="btn" onclick="incrementScoreTeamOne()">
+                        <button id="increment-score-team-1" aria-label="Add one goal to team 1" class="btn" onclick="incrementScoreTeamOne()">
                             <i class="fa-solid fa-plus"></i>
                         </button>
-                        <button id="reduce-score-team-1" class="btn" onclick="reduceScoreTeamOne()">
+                        <button id="reduce-score-team-1" class="btn" aria-label="Remove one goal to team 1" onclick="reduceScoreTeamOne()">
                             <i class="fa-solid fa-minus"></i>
                         </button>
                     </div>
@@ -45,14 +47,14 @@
             </div>
 
             <div id="period">
-                <label for="border-period">Period</label>
+                <h2>Period</h2>
                 <div id="border-period">
                     <div id="period-number"></div>
                     <div id="adjust-period">
-                        <button id="increment-period" class="btn" onclick="incrementPeriod()">
+                        <button id="increment-period" class="btn" aria-label="Add one period" onclick="incrementPeriod()">
                             <i class="fa-solid fa-plus"></i>
                         </button>
-                        <button id="reduce-period" class="btn" onclick="reducePeriod()">
+                        <button id="reduce-period" class="btn" aria-label="reduce one period" onclick="reducePeriod()">
                             <i class="fa-solid fa-minus"></i>
                         </button>
                     </div>
@@ -60,14 +62,14 @@
             </div>
 
             <div id="score-team-2">
-                <label for="border-goal-team-2">Score Team 2</label>
+                <h2>Score Team 2</h2>
                 <div id="border-goal-team-2">
                     <div id="goal-team-2"></div>
                     <div id="adjust-score-team-2">
-                        <button id="increment-score-team-2" class="btn" onclick='incrementScoreTeamTwo()'>
+                        <button id="increment-score-team-2" aria-label="Add one goal to team 2" class="btn" onclick='incrementScoreTeamTwo()'>
                             <i class="fa-solid fa-plus"></i>
                         </button>
-                        <button id="reduce-score-team-2" class="btn" onclick="reduceScoreTeamTwo()">
+                        <button id="reduce-score-team-2" class="btn" aria-label="Remove one goal to team 2" onclick="reduceScoreTeamTwo()">
                             <i class="fa-solid fa-minus"></i>
                         </button>
                     </div>
@@ -79,14 +81,14 @@
         <div id="shot-panel">
 
             <div id="shot-team-1">
-                <label for="border-shot-team-1">Shot Team 1</label>
+                <h2>Shot Team 1</h2>
                 <div id="border-shot-team-1">
                     <div id="shot-team-1-number"></div>
                     <div id="adjust-shot-team-1">
-                        <button id="increment-shot-team-1" class="btn" onclick="incrementShotTeamOne()">
+                        <button id="increment-shot-team-1" class="btn" aria-label="Add one shot to team 1" onclick="incrementShotTeamOne()">
                             <i class="fa-solid fa-plus"></i>
                          </button>
-                        <button id="reduce-shot-team-1" class="btn" onclick="reduceShotTeamOne()">
+                        <button id="reduce-shot-team-1" class="btn" aria-label="remove one shot to team 1" onclick="reduceShotTeamOne()">
                             <i class="fa-solid fa-minus"></i>
                         </button>
                     </div>
@@ -94,14 +96,14 @@
             </div>
 
             <div id="shot-team-2">
-                <label for="border-shot-team-2">Shot Team 2</label>
+                <h2>Shot Team 2</h2>
                 <div id="border-shot-team-2">
                     <div id="shot-team-2-number"></div>
                     <div id="adjust-shot-team-2">
-                        <button id="increment-shot-team-2" class="btn" onclick="incrementShotTeamTwo()">
+                        <button id="increment-shot-team-2" aria-label="Add one shot to team 2" class="btn" onclick="incrementShotTeamTwo()">
                             <i class="fa-solid fa-plus"></i>
                         </button>
-                        <button id="reduce-shot-team-2" class="btn" onclick="reduceShotTeamTwo()">
+                        <button id="reduce-shot-team-2" class="btn" aria-label="Remove one shot to team 2" onclick="reduceShotTeamTwo()">
                             <i class="fa-solid fa-minus"></i>
                         </button>
                     </div>
@@ -114,7 +116,7 @@
 
             <div id="team-1-rooster">
                 <div id="rooster-setting-team-1">
-                    <button id="set-rooster-team-1" class="btn">
+                    <button id="set-rooster-team-1" aria-label="Add a player to the rooster of team 1" class="btn">
                         <i class="fa-solid fa-user-plus"></i>
                     </button>
                 </div>
@@ -123,7 +125,7 @@
 
             <div id="team-2-rooster">
                 <div id="rooster-setting-team-2">
-                    <button id="set-rooster-team-2" class="btn">
+                    <button id="set-rooster-team-2" aria-label="Add a player to the rooster of team 2" class="btn">
                         <i class="fa-solid fa-user-plus"></i>
                     </button>
                 </div>

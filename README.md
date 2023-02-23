@@ -20,97 +20,40 @@ __Timer__
 ![Score Board](assets/images/scoreboard.png)
 ![Score Board Setting](assets/images/scoreboard-setting.png)
 
-__Goal__
+__Goal panel__
 
-- Period 0 has 5 minutes timer to give some time to the player to practice there shot. Period 1,2 and 3 have 10 mins to accomodate most if the ball hockey league time rules. Period 4 has 5 mins
+- The goal panels are shown on each side for each team. The user can add/remove a goal to/from each team.
 
-![Index Welcome page](assets/images/welcome-image.png)
+![Goal Panel](assets/images/goal-team-1.png)
+![Goal Panel](assets/images/goal-team-2.png)
 
-__what is crypto Section__
+__Period Panel__
 
-- This section is to explain in a very general view what is cryptocurrency.
+- The period panel is between the goal panel of each team. It is initially set to 0. If the user try to remove a period when it is at 0, it will send an error message 'Impossible!'. When the user increase the period to 1,2 & 3, the time will be set to 10 minutes and a alert message is sent stating 'Beginning or Period 1/2/3. When the user increase to period 4, the message is 'Beginning of overtime!' and the time is set to 5 mins.
 
-- A picture on the side has been put to catch the eyes of the viewer in an original way. The text is on the left and picture on the right. You will find the opposite set up in the section "Type of token".
 
-![What is crypto Section](assets/images/what-is-crypto.png)
+![Period Panel](assets/images/period.png)
 
-__Three sections__
+__Shot panel__
 
-- This section explains 3 really important definition that are not always understood in the crypto world. 
+- The shot panels are shown on each side for each team. The user can add/remove a shot to/from each team. 
 
-- The definitions are shorts and aim to get the viewers curious about the subject. A future update of the website aim to add more details on those concepts.
+![Shot Panel](assets/images/shot.png)
 
-![Three Sections](assets/images/three-sections.png)
+__Rooster Panel__
 
-__type of token__
+- The Rooster panels are shown on each side for each team. The user can add the rooster of each team. When the button is clicked, a form is added to the div setting. 3 entry are required before submiting the form: the player #, player first name and player last name. Once submitted, the form is removed from the div setting the the information of the player are added to the div rooster.
 
-- this token is an introduction to the list of the token below it.
 
-- It aims to catch the eye and like the "What is crypto section" show the website in an original way. As mentioned above, the text and image are opposite to the other section.
-
-![Type of Token](assets/images/type-of-token.png)
-
-__list of token__
-
-- The list of token follows the same pattern, alternating right to left.
-
-- The description are shorts and aim to get the viewers curious about the subject. Most of them have example so the viewers can understand better the concept and start to know some of the tokens.
-
-![List of Token](assets/images/list-of-token.png)
-
-__footer__
-
-- The footer has 4 useful links: Coinmarketcap (Coins encyclopaedia), Binance (Platform), Coinbase (Platform) and Ledger (Solution to store crypto safely). 
-
-- Copyright have also been added into the footer.
-
-![Footer](assets/images/footer.png)
-
-__Buy Crypto welcome image__
-
-- The image catches the eyes as it connects us dollars and bitcoin. It makes total sense as the next section on the page will be explaining how to buy crypto with a currency.
-
-![Buy Crypto welcome](assets/images/buy-crypto-welcome.png)
-
-__Buy using an exchange__
-
-- This section explains that the best way to buy crypto is by exchanges. It shows how important to do research about the exchanges before choosing it.
-
-- Three criteria are elaborated in this section which are also shown in the table below.
-
-![Buy using exchanges](assets/images/buy-using-exchanges.png)
-
-__Exchange table__
-
-- To catch the eyes of the viewers and show the details of every exchange in a easy and simple way, a table is shown.
-
-- Four data are shown in the table: exchange's name, overall rating, financial reserve and deposit bonuses.
-
-- The viewers understand straight away the table has the data has been explained in the section just above it.
-
-![Exchanges table](assets/images/exchanges-table.png)
-
-__Report a scam image__
-
-- The welcome page covers all the whole page and catch the eyes as it is a bitcoin in the dirt. The dirt represents the though feeling of losing money and being caught in a scam.
-
-![Report scam welcome](assets/images/report-scam-welcome.png)
-
-__Report a scam form__
-
-- The form has four entries: First name, Last name, Scam Description, and platform which the scam has happened.
-
-- The reports are put in the database. In a future update of the website, the scams will be shown on the website and an easy search option will be featured for anybody to check if they are going to the same scam that someone else has reported.
-
-![Form Scam](assets/images/form-scam.png)
+![Rooster Panel](assets/images/rooster.png)
 
 ### Features left to implement
 
-- The database of the scams shown directly on the website.
+- A penality panel will be implemented in a futur version. The penality panel will add the player number with the time he is on penality. Once the button in the Timer panel play is clicked, the time of the penality would also start. When the the is egal to 0:00, the block is removed.
 
-- A search feature to find a scam from the database.
+- A function to the goal panel will be implemented in a futur version where the user can enter when a team score the details of the player who scored and the player who did the pass to the scorer. Those data will be kept in a database for the next function.
 
-- A additional page explaining the main scams that are around in the crypto world.
+- At the end of the game, the statistic of the game will be sent in a format that shows who won the game, the details of each goal (Scorer + passer) and the number of shot for each team. 
 
 ## Testing
 
@@ -120,24 +63,24 @@ You can find below that all testing has been completed.
 
 - HTML validator have been completed and all errors and warnings have been fixed.
 
-![HTML validator](assets/images/HTML-validator.png)
+![HTML validator](assets/images/html-validator.png)
 
 - CSS validator have been completed and no errors or warnings have been found.
 
-![CSS validator](assets/images/CSS-validator.png)
+![CSS validator](assets/images/css-validator.png)
 
 - Lighthouse has been run through all the pages, see the below result:
 
 ![Lighthouse](assets/images/lighthouse.png)
 
-- The performance is the only assessment which has not achieved 100 points. Two main factors explain the lack of performance:
-
-    - The size of the images is the main problem as it takes too long for the images to load. Smaller resolution of images should have been used for the website. This was the main problem of the performance and only that change would have boosted greatly the performance.
+- The performance is the only assessment which has not achieved 100 points. Two main factors explain the lack of performance: 
     - The CSS files is too heavy. To achieve a perfect performance, CSS file should have been optimised.
+    - The JS files is too heavy. To achieve a perfect performance, JS file should have been optimised. The use of library would greatly improve the performance.
+
 
 ### Unfixed Bugs
 
- - All bugs have been fixed. Performance could be upgraded by using smaller resolution pictures and by optimizing the CSS file.
+ - All bugs have been fixed. Performance could be upgraded by optimizing the CSS & JS files.
 
 ## Deployment
 
@@ -148,15 +91,12 @@ You can find below that all testing has been completed.
     -  In the setting / page, the source has been put on "Deploy from a branch" and the branch on "main" then click save
     -  The website is now deployed
 
-The live link can be found here: https://vincentbergeron33.github.io/How-to-avoid-scam-in-Crypto-world/
-
+The live link can be found here: 
 ## Credits
 
-- Code ideas have been taken from the Love Running Website. The codes were never copy/paste. They were developed to follow the configuration of the website.
+- The project idea came from a request of my brother who would like his ball hockey website to be updated. The colors represent his hockey league colors.
 
-- Investopedia was used as a reference for the rating of the exchanges.
-
-- Coinmarketcap was used for the financial reserve for the exchanges.
+- The coding itself was developped using the tool of the course. For details how to run specific functions, the website Stack Overflow was a great help. Please note that no code have been copy/paste from any website. The website were only a tool to understand the mechanic of the code.
 
 ### Content
 
@@ -166,6 +106,6 @@ The live link can be found here: https://vincentbergeron33.github.io/How-to-avoi
 
 ### Media
 
-- All pictures were taken from [Pexels](https://www.pexels.com/)
+- Non-applicable.
 
 
