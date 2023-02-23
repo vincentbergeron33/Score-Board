@@ -1,6 +1,6 @@
 # Hockey Score Board
 
-
+The website is a usefull scoreboard. The scoreboard is set to the ball hockey timing rules but can easily use for any kind of sports as the functions have been developped to accept all kind of data numbers. It has been designed to be simple and easy to use for the user. In case the user did a mystake, he/she can easily correct it by clicking to the opposite button. It fits for all size of media but I strongly suggest to use a desktop so the user can share his screen on a tv by example so all players can see the time running down.
 
 ![Am I Responsive](assets/images/amiresponsive.png)
 
@@ -91,7 +91,7 @@ You can find below that all testing has been completed.
     -  In the setting / page, the source has been put on "Deploy from a branch" and the branch on "main" then click save
     -  The website is now deployed
 
-The live link can be found here: 
+The live link can be found here: https://vincentbergeron33.github.io/Score-Board/
 ## Credits
 
 - The project idea came from a request of my brother who would like his ball hockey website to be updated. The colors represent his hockey league colors.
