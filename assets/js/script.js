@@ -1,8 +1,12 @@
 // Data to be at 0 and time to be at 10 mins when the page loads
 
+// Move all HTML nodes at the top
+let minutesNode = document.getElementById("minutes");
+let secondsNode = document.getElementById("seconds");
+
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById("minutes").innerHTML = 5;
-    document.getElementById("seconds").innerHTML = '00';
+    minutesNode.innerHTML = 5;
+    secondsNode.innerHTML = '00';
     document.getElementById("goal-team-1").innerHTML = 0;
     document.getElementById("period-number").innerHTML = 0;
     document.getElementById("goal-team-2").innerHTML = 0;
@@ -16,43 +20,38 @@ document.addEventListener('DOMContentLoaded', function() {
 /**
  * The function will start the timbreak when the stop button is clicked
  */
-let start = document.getElementById('start-time');
-start.addEventListener('click', startTime);
+let playBtnNode = document.getElementById('start-time');
+playBtnNode.addEventListener('click', onPlayButtonClick);
+let stop = document.getElementById('stop-time');
+stop.addEventListener('click', stopTime);
 
 
-var timer1 = null;
-function startTime() {
-
-    timer1 = setTimeout(function()  {
-
-    var minutes = parseInt(document.getElementById('minutes').innerHTML);
-    var seconds = parseInt(document.getElementById('seconds').innerHTML);
-    let stop = document.getElementById('stop-time');
+var intervalRef = null;
+function onPlayButtonClick() {
+    intervalRef = setInterval(function()  {
+    var minutes = parseInt(minutesNode.innerHTML);
+    var seconds = parseInt(secondsNode.innerHTML);
     console.log(minutes, seconds, stop);
-    stop.addEventListener('click', stopTime);
-
         if (seconds === 0 & minutes !== 0) {
                 seconds = 59;
                 minutes--;
                 console.log(minutes, seconds);
-                document.getElementById('seconds').innerHTML = seconds;
-                document.getElementById('minutes').innerHTML = minutes;
-                startTime();
-
+                secondsNode.innerHTML = String(seconds).padStart(2, "0");
+                minutesNode.innerHTML = String(minutes).padStart(2, "0");
         } else if (seconds > 0) {
                 seconds--;
-                document.getElementById('seconds').innerHTML = seconds;
-                startTime();
-
+                secondsNode.innerHTML = String(seconds).padStart(2, "0");
         } else if (parseInt(seconds) === 0 && parseInt(minutes) === 0) {
             alert('end of period!')
-            document.getElementById('seconds').innerHTML = '00';
+            secondsNode.innerHTML = '00';
+            clearInterval(intervalRef);
         }
     }, 1000)
 }
+
 function stopTime() {
-    clearInterval(timer1);
-    timer1 = null;
+    clearInterval(intervalRef);
+    intervalRef = null;
 }
 
 /**
@@ -72,53 +71,55 @@ function setTimer () {
     let setTimerInput = document.createElement("form");
     setTimerInput.id = 'submit-time';
     setTimerInput.innerHTML = setTimerInputHTML;
-    document.getElementById('control-time').appendChild(setTimerInput);
+    document.getElementById('control-time').replaceChild(setTimerInput, document.getElementById('control-time').childNodes[0]);
 
     let subtmitTime = document.getElementById('submit-time');
     subtmitTime.addEventListener("submit", updateTime);
-
 }
-
-
 
 function updateTime(event) {
     event.preventDefault();   
-
     var newMins = document.getElementById('setMinutes');
     var newScds = document.getElementById('setSeconds');
     if (parseInt(newScds.value) >= 60) {
         alert('Impossible, please enter valid time!');
     } else if (parseInt(newMins.value) >= 100) {
         alert('Be carefull of exhaustion, the game is way too long!');
-        document.getElementById('minutes').innerHTML = newMins.value;
-        document.getElementById('seconds').innerHTML = newScds.value;
+        minutesNode.innerHTML = newMins.value;
+        secondsNode.innerHTML = newScds.value;
         document.getElementById('submit-time').remove(); ; 
     } else {
-        document.getElementById('minutes').innerHTML = newMins.value;
-        document.getElementById('seconds').innerHTML = newScds.value;
+        minutesNode.innerHTML = newMins.value;
+        secondsNode.innerHTML = newScds.value;
         document.getElementById('submit-time').remove(); 
     }
 }
 
 
 
+function updateCounter(scoreDiv, updateValue) {
+    let i = parseInt(scoreDiv.innerHTML);
+    i = i + updateValue;
+    scoreDiv.innerHTML = i;
+}
+
+
 /**
  * The function will increment the score of team 1
  */
 function incrementScoreTeamOne() {
-    let i = parseInt(document.getElementById("goal-team-1").innerHTML);
-    i++;
-    document.getElementById("goal-team-1").innerHTML = i;
+    updateCounter(document.getElementById("goal-team-1"), 1)
 }
 
 function reduceScoreTeamOne() {
-    let i = parseInt(document.getElementById("goal-team-1").innerHTML);
-    if (i !== 0) {
-        i--;
-    } else { 
-        alert('Impossible!');
-    }
-    document.getElementById("goal-team-1").innerHTML = i;
+    updateCounter(document.getElementById("goal-team-1"), -1)
+    // let i = parseInt(document.getElementById("goal-team-1").innerHTML);
+    // if (i !== 0) {
+    //     i--;
+    // } else { 
+    //     alert('Impossible!');
+    // }
+    // document.getElementById("goal-team-1").innerHTML = i;
 }
 
 function incrementPeriod() {
@@ -130,22 +131,22 @@ function incrementPeriod() {
         /* Timmer = 10 mins*/
         alert('Beginning of Period 1!')
         document.getElementById("minutes").innerHTML = 10;
-        document.getElementById("seconds").innerHTML = '00';
+        secondsNode.innerHTML = '00';
     } else if (i==2) {
         /* Timmer = 10 mins*/
         alert('Beginning of Period 2!')
         document.getElementById("minutes").innerHTML = 10;
-        document.getElementById("seconds").innerHTML = '00';
+        secondsNode.innerHTML = '00';
     } else if (i==3) {
         /* Timmer = 10 mins*/
         alert('Beginning of Period 3!')
         document.getElementById("minutes").innerHTML = 10;
-        document.getElementById("seconds").innerHTML = '00';
+        secondsNode.innerHTML = '00';
     } else if (i==4) {
         /* Timmer = 5 mins*/
         alert('Beginning of Overtime!')
         document.getElementById("minutes").innerHTML = 5;
-        document.getElementById("seconds").innerHTML = '00';
+        secondsNode.innerHTML = '00';
     }
 }
 
@@ -176,25 +177,25 @@ function reducePeriod() {
 }
 
 function incrementScoreTeamTwo() {
-    let i = parseInt(document.getElementById("goal-team-2").innerHTML);
-    i++;
-    document.getElementById("goal-team-2").innerHTML = i;
+    updateCounter(document.getElementById("goal-team-2"), 1);
 }
 
 function reduceScoreTeamTwo() {
-    let i = parseInt(document.getElementById("goal-team-2").innerHTML);
-    if (i !== 0) {
-        i--;
-    } else { 
-        alert('Impossible!');
-    }
-    document.getElementById("goal-team-2").innerHTML = i;
+    updateCounter(document.getElementById("goal-team-2"), -1);
+    // let i = parseInt(document.getElementById("goal-team-2").innerHTML);
+    // if (i !== 0) {
+    //     i--;
+    // } else { 
+    //     alert('Impossible!');
+    // }
+    // document.getElementById("goal-team-2").innerHTML = i;
 }
 
 function incrementShotTeamOne() {
-    let i = parseInt(document.getElementById("shot-team-1-number").innerHTML);
-    i++;
-    document.getElementById("shot-team-1-number").innerHTML = i;
+    updateCounter(document.getElementById("shot-team-1-number"), 1);
+    // let i = parseInt(.innerHTML);
+    // i++;
+    // document.getElementById("shot-team-1-number").innerHTML = i;
 }
 
 function reduceShotTeamOne() {
