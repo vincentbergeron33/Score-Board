@@ -3,17 +3,44 @@
 // Move all HTML nodes at the top
 let minutesNode = document.getElementById("minutes");
 let secondsNode = document.getElementById("seconds");
+let goalOneNode = document.getElementById("goal-team-1");
+let periodNode = document.getElementById("period-number");
+let goalTwoNode = document.getElementById("goal-team-2");
+let shotOneNode = document.getElementById("shot-team-1-number");
+let shotTwoNode = document.getElementById("shot-team-2-number");
+let roosterOneNode = document.getElementById("rooster-details-team-1");
+let roosterTwoNode = document.getElementById("rooster-details-team-2");
+
+let addScoreOneBtnNode = document.getElementById('increment-score-team-1');
+let reduceScoreOneBtnNode = document.getElementById('reduce-score-team-1');
+let addPeriodBtnNode = document.getElementById('increment-period');
+let reducePeriodBtnNode = document.getElementById('reduce-period');
+let addScoreTwoBtnNode = document.getElementById('increment-score-team-2');
+let reduceScoreTwoBtnNode = document.getElementById('reduce-score-team-2');
+let addShotOneBtnNode = document.getElementById('increment-shot-team-1');
+let reduceShotOneBtnNode = document.getElementById('reduce-shot-team-1');
+let addShotTwoBtnNode = document.getElementById('increment-shot-team-2');
+let reduceShotTwoBtnNode = document.getElementById('reduce-shot-team-2');
+let roosterSettingOne = document.getElementById("rooster-setting-team-1");
+let roosterSettingTwo = document.getElementById("rooster-setting-team-2");
 
 document.addEventListener('DOMContentLoaded', function() {
     minutesNode.innerHTML = 5;
     secondsNode.innerHTML = '00';
-    document.getElementById("goal-team-1").innerHTML = 0;
-    document.getElementById("period-number").innerHTML = 0;
-    document.getElementById("goal-team-2").innerHTML = 0;
-    document.getElementById("shot-team-1-number").innerHTML = 0;
-    document.getElementById("shot-team-2-number").innerHTML = 0;
-    document.getElementById("rooster-details-team-1").innerHTML = '';
-    document.getElementById("rooster-details-team-2").innerHTML = '';
+    goalOneNode.innerHTML = 0;
+    periodNode.innerHTML = 0;
+    goalTwoNode.innerHTML = 0;
+    shotOneNode.innerHTML = 0;
+    shotTwoNode.innerHTML = 0;
+    roosterOneNode.innerHTML = '';
+    roosterTwoNode.innerHTML = '';
+
+
+    reduceScoreOneBtnNode.disabled = true;
+    reducePeriodBtnNode.disabled = true;
+    reduceScoreTwoBtnNode.disabled = true;
+    reduceShotOneBtnNode.disabled = true;
+    reduceShotTwoBtnNode.disabled = true;
 })
 
 
@@ -25,6 +52,18 @@ playBtnNode.addEventListener('click', onPlayButtonClick);
 let stop = document.getElementById('stop-time');
 stop.addEventListener('click', stopTime);
 
+ddScoreOneBtnNode.addEventListener('click', incrementScoreTeamOne);
+reduceScoreOneBtnNode.addEventListener('click', reduceScoreTeamOne);
+addPeriodBtnNode.addEventListener('click', incrementPeriod);
+reducePeriodBtnNode.addEventListener('click', reducePeriod);
+addScoreTwoBtnNode.addEventListener('click', incrementScoreTeamTwo);
+reduceScoreTwoBtnNode.addEventListener('click', reduceScoreTeamTwo);
+addShotOneBtnNode.addEventListener('click', incrementShotTeamOne);
+reduceShotOneBtnNode.addEventListener('click', reduceShotTeamOne);
+addShotTwoBtnNode.addEventListener('click', incrementShotTeamTwo);
+reduceShotTwoBtnNode.addEventListener('click', reduceShotTeamTwo);
+roosterSettingOne.addEventListener('click', setRoosterOne);
+roosterSettingTwo.addEventListener('click', setRoosterTwo);
 
 var intervalRef = null;
 function onPlayButtonClick() {
@@ -47,11 +86,15 @@ function onPlayButtonClick() {
             clearInterval(intervalRef);
         }
     }, 1000)
+    playBtnNode.disabled = true;
+    stop.disabled = false;
 }
 
 function stopTime() {
     clearInterval(intervalRef);
     intervalRef = null;
+    playBtnNode.disabled = false;
+    stop.disabled = true;
 }
 
 /**
@@ -108,57 +151,53 @@ function updateCounter(scoreDiv, updateValue) {
  * The function will increment the score of team 1
  */
 function incrementScoreTeamOne() {
-    updateCounter(document.getElementById("goal-team-1"), 1)
+    updateCounter(goalOneNode, 1)
+    reduceScoreOneBtnNode.disabled = false;
 }
 
 function reduceScoreTeamOne() {
-    updateCounter(document.getElementById("goal-team-1"), -1)
-    // let i = parseInt(document.getElementById("goal-team-1").innerHTML);
-    // if (i !== 0) {
-    //     i--;
-    // } else { 
-    //     alert('Impossible!');
-    // }
-    // document.getElementById("goal-team-1").innerHTML = i;
+    updateCounter(goalOneNode, -1)
+    if (parseInt(goalOneNode.innerText) === 0)
+    reduceScoreOneBtnNode.disabled = true;
 }
 
 function incrementPeriod() {
-    let i = parseInt(document.getElementById("period-number").innerText);
+    let i = parseInt(periodNode.innerText);
     i++;
-    document.getElementById("period-number").innerHTML = i;
+    periodNode.innerHTML = i;
 
     if (i==1) {
         /* Timmer = 10 mins*/
         alert('Beginning of Period 1!')
-        document.getElementById("minutes").innerHTML = 10;
+        minutesNode.innerHTML = 10;
         secondsNode.innerHTML = '00';
     } else if (i==2) {
         /* Timmer = 10 mins*/
         alert('Beginning of Period 2!')
-        document.getElementById("minutes").innerHTML = 10;
+        minutesNode.innerHTML = 10;
         secondsNode.innerHTML = '00';
     } else if (i==3) {
         /* Timmer = 10 mins*/
         alert('Beginning of Period 3!')
-        document.getElementById("minutes").innerHTML = 10;
+        minutesNode.innerHTML = 10;
         secondsNode.innerHTML = '00';
     } else if (i==4) {
         /* Timmer = 5 mins*/
         alert('Beginning of Overtime!')
-        document.getElementById("minutes").innerHTML = 5;
+        minutesNode.innerHTML = 5;
         secondsNode.innerHTML = '00';
     }
 }
 
 function reducePeriod() {
-    let i = parseInt(document.getElementById("period-number").innerHTML);
+    let i = parseInt(periodNode.innerHTML);
     if (i !== 1) {
         i--;
     } else { 
         alert('Impossible!');
     }
 
-    document.getElementById("period-number").innerHTML = i;
+    periodNode.innerHTML = i;
 
     if (i==1) {
         /* Timmer = 10 mins*/
@@ -177,51 +216,27 @@ function reducePeriod() {
 }
 
 function incrementScoreTeamTwo() {
-    updateCounter(document.getElementById("goal-team-2"), 1);
+    updateCounter(goalTwoNode, 1);
 }
 
 function reduceScoreTeamTwo() {
-    updateCounter(document.getElementById("goal-team-2"), -1);
-    // let i = parseInt(document.getElementById("goal-team-2").innerHTML);
-    // if (i !== 0) {
-    //     i--;
-    // } else { 
-    //     alert('Impossible!');
-    // }
-    // document.getElementById("goal-team-2").innerHTML = i;
+    updateCounter(goalTwoNode, -1);
 }
 
 function incrementShotTeamOne() {
-    updateCounter(document.getElementById("shot-team-1-number"), 1);
-    // let i = parseInt(.innerHTML);
-    // i++;
-    // document.getElementById("shot-team-1-number").innerHTML = i;
+    updateCounter(shotOneNode, 1);
 }
 
 function reduceShotTeamOne() {
-    let i = parseInt(document.getElementById("shot-team-1-number").innerHTML);
-    if (i !== 0) {
-        i--;
-    } else { 
-        alert('Impossible!');
-    }
-    document.getElementById("shot-team-1-number").innerHTML = i;
+    updateCounter(shotOneNode, -1);
 }
 
 function incrementShotTeamTwo() {
-    let i = parseInt(document.getElementById("shot-team-2-number").innerHTML);
-    i++;
-    document.getElementById("shot-team-2-number").innerHTML = i;
+    updateCounter(shotTwoNode, 1);
 }
 
 function reduceShotTeamTwo() {
-    let i = parseInt(document.getElementById("shot-team-2-number").innerHTML);
-    if (i !== 0) {
-        i--;
-    } else { 
-        alert('Impossible!');
-    }
-    document.getElementById("shot-team-2-number").innerHTML = i;
+    updateCounter(shotTwoNode, -1);
 }
 
  /* Set rooster functions*/
@@ -250,7 +265,7 @@ function setRoosterOne () {
     let setRoosterOneInput = document.createElement("form");
     setRoosterOneInput.id = 'submit-team-one';
     setRoosterOneInput.innerHTML = setRoosterOneInputHTML;
-    document.getElementById('rooster-setting-team-1').appendChild(setRoosterOneInput);
+    document.getElementById('rooster-setting-team-1').replaceChild(setRoosterOneInput, document.getElementById('rooster-setting-team-1').childNodes[0]);
 
     let subtmitRoosterOne = document.getElementById('submit-team-one');
     subtmitRoosterOne.addEventListener("submit", updateRoosterOne);
