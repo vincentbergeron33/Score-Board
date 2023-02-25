@@ -59,6 +59,36 @@ __Rooster Panel__
 
 You can find below that all testing has been completed.
 
+### Page testing
+
+__Timer testing__
+
+- The play & pause button have been tested. Once the play button is clicked, it is disabled and only the pause button is abled. Once the pause button is clicked, the it is disabled and the play button is abled.
+![Play Disabled](assets/images/play%20disabled.png)
+![Pause Disabled](assets/images/pause-disabled.png)
+
+- The setting button becomes disabled once click to ensure a maximum of one form is created. Once the form is submitted to change the time, it becomes abled.
+![Set Time Disabled](assets/images/set-time-disabled.png);
+
+- The seconds in the set timer form is limited to 59 and it will send back an error is the user pt a value higher then 59.
+
+- The second and minutes are always showing with a minimum of 2 numbers in the timer. If a value of 8 mind and 0 secondes is entered in the set timmer form, it will show a value of 08:00.
+
+![Double Number](assets/images/double-number.png)
+
+__Goal, Period and Shots__
+
+- The number of the goals, period and shots can never go below 0 as the minus button is disabled when the value is egal to 0.
+
+![Minus Disabled](assets/images/minus-disabled.png)
+
+__Rooster__
+
+- The rooster setting buttons follow the same logic as the set time button of the timer. Once clicked, it is disabled to ensure the user doesn't create more then one form. Once the required information are filled, the form is deleted, the entry is added to the rooster and the rooster setting button is abled.
+
+![disabled-add-rooster](assets/images/disabled-add-rooster.png)
+
+
 ### Validator Testing
 
 - HTML validator have been completed and all errors and warnings have been fixed.
@@ -92,6 +122,9 @@ You can find below that all testing has been completed.
     -  The website is now deployed
 
 The live link can be found here: https://vincentbergeron33.github.io/Score-Board/
+
+The website has been deployed when all functions were tested and were working. From the deployment, CSS validor, HTML validator and AMIRESPONSIVE have been run through the website.
+
 ## Credits
 
 - The project idea came from a request of my brother who would like his ball hockey website to be updated. The colors represent his hockey league colors.
