@@ -36,7 +36,7 @@ setRoosterTeamOneBtn.addEventListener('click', setRoosterOne);
 setRoosterTeamTwoBtn.addEventListener('click', setRoosterTwo);
 
 document.addEventListener('DOMContentLoaded', function() {
-    minutesNode.innerHTML = 5;
+    minutesNode.innerHTML = '05';
     secondsNode.innerHTML = '00';
     goalOneNode.innerHTML = 0;
     periodNode.innerHTML = 0;
@@ -158,7 +158,7 @@ function incrementPeriod() {
         minutesNode.innerHTML = 10;
         secondsNode.innerHTML = '00';
     } else if (parseInt(periodNode.innerText) === 4) {
-        minutesNode.innerHTML = 5;
+        minutesNode.innerHTML = '05';
         secondsNode.innerHTML = '00';
     }
 }
@@ -168,7 +168,7 @@ function reducePeriod() {
 
     if (parseInt(periodNode.innerText) === 0) {
     reducePeriodBtnNode.disabled = true;
-    minutesNode.innerHTML = 5;
+    minutesNode.innerHTML = '05';
     secondsNode.innerHTML = '00';
     } else if (parseInt(periodNode.innerText) === 1) {
         minutesNode.innerHTML = 10;

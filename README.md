@@ -1,21 +1,21 @@
 # Hockey Score Board
 
-The website is a usefull scoreboard. The scoreboard is set to the ball hockey timing rules but can easily use for any kind of sports as the functions have been developped to accept all kind of data numbers. It has been designed to be simple and easy to use for the user. In case the user did a mystake, he/she can easily correct it by clicking to the opposite button. It fits for all size of media but I strongly suggest to use a desktop so the user can share his screen on a tv by example so all players can see the time running down.
+The website is a useful scoreboard. The scoreboard is set to the ball hockey timing rules but can easily use for any kind of sports as the functions have been developed to accept all kind of data numbers. It has been designed to be simple and easy to use for the user. In case the user did a mistake, he/she can easily correct it by clicking to the opposite button. It fits for all size of media, but I strongly suggest to use a desktop so the user can share his screen on a tv by example so all players can see the time running down.
 
 ![Am I Responsive](assets/images/amiresponsive.png)
 
 ## Features
 
-The website is a simple ball hockey Score board with program time for each period. The user can add the rooster in the bottom of the score board at the beginning of the game. Once the game has started, the user can easily stop and play the timer, add/remove goal to/from a team, add/remove shot to/from each team. The timer can also be modified manually to accomodate different time rules.
+The website is a simple ball hockey Score board with program time for each period. The user can add the rooster in the bottom of the score board at the beginning of the game. Once the game has started, the user can easily stop and play the timer, add/remove goal to/from a team, add/remove shot to/from each team. The timer can also be modified manually to accommodate different time rules.
 
 ### Existing Features
 
 __Timer__
 
-- The timer is the biggest object in the page to ensure all players can see the time. The timmer has 3 functions:
-    - Set Time: By click on the setting button, the user can modify the time. If the value of second exceed 60, a error message is sent to the user. If the value of minutes exceed 100, a alert message is sent to the user telling him that the game is way too long but the command is still executed to accomodate user who would like to set up the timer for a 2 hours free play by example.
-    - Play time: The timer start going down by one second for every tick.
-    - Stop time: The timer stop ticking.
+- The timer is the biggest object in the page to ensure all players can see the time. The timer has 3 functions:
+    - Set Time: By click on the setting button, the user can modify the time. If the value of second exceeds 60, an error message is sent to the user. If the value of minutes exceed 100, an alert message is sent to the user telling him that the game is way too long but the command is still executed to accommodate user who would like to set up the timer for a 2 hours free play by example.
+    - Play time: The timer starts going down by one second for every tick.
+    - Stop time: The timer stops ticking.
 
 ![Score Board](assets/images/scoreboard.png)
 ![Score Board Setting](assets/images/scoreboard-setting.png)
@@ -29,7 +29,7 @@ __Goal panel__
 
 __Period Panel__
 
-- The period panel is between the goal panel of each team. It is initially set to 0. If the user try to remove a period when it is at 0, it will send an error message 'Impossible!'. When the user increase the period to 1,2 & 3, the time will be set to 10 minutes and a alert message is sent stating 'Beginning or Period 1/2/3. When the user increase to period 4, the message is 'Beginning of overtime!' and the time is set to 5 mins.
+- The period panel is between the goal panel of each team. It is initially set to 0. If the user tries to remove a period when it is at 0, it will send an error message 'Impossible!'. When the user increases the period to 1,2 & 3, the time will be set to 10 minutes and an alert message is sent stating 'Beginning or Period 1/2/3. When the user increase to period 4, the message is 'Beginning of overtime!' and the time is set to 5 mins.
 
 
 ![Period Panel](assets/images/period.png)
@@ -42,16 +42,16 @@ __Shot panel__
 
 __Rooster Panel__
 
-- The Rooster panels are shown on each side for each team. The user can add the rooster of each team. When the button is clicked, a form is added to the div setting. 3 entry are required before submiting the form: the player #, player first name and player last name. Once submitted, the form is removed from the div setting the the information of the player are added to the div rooster.
+- The Rooster panels are shown on each side for each team. The user can add the rooster of each team. When the button is clicked, a form is added to the div setting. 3 entries are required before submitting the form: the player #, player first name and player last name. Once submitted, the form is removed from the div setting the information of the player are added to the div rooster.
 
 
 ![Rooster Panel](assets/images/rooster.png)
 
 ### Features left to implement
 
-- A penality panel will be implemented in a futur version. The penality panel will add the player number with the time he is on penality. Once the button in the Timer panel play is clicked, the time of the penality would also start. When the the is egal to 0:00, the block is removed.
+- A penalty panel will be implemented in a future version. The penality panel will add the player number with the time he is on penalty. Once the button in the Timer panel play is clicked, the time of the penalty would also start. When the the is egal to 0:00, the block is removed.
 
-- A function to the goal panel will be implemented in a futur version where the user can enter when a team score the details of the player who scored and the player who did the pass to the scorer. Those data will be kept in a database for the next function.
+- A function to the goal panel will be implemented in a future version where the user can enter when a team score the details of the player who scored and the player who did the pass to the scorer. Those data will be kept in a database for the next function.
 
 - At the end of the game, the statistic of the game will be sent in a format that shows who won the game, the details of each goal (Scorer + passer) and the number of shot for each team. 
 
@@ -63,16 +63,16 @@ You can find below that all testing has been completed.
 
 __Timer testing__
 
-- The play & pause button have been tested. Once the play button is clicked, it is disabled and only the pause button is abled. Once the pause button is clicked, the it is disabled and the play button is abled.
+- The play & pause button have been tested. Once the play button is clicked, it is disabled and only the pause button is abled. Once the pause button is clicked, it is disabled and the play button is abled.
 ![Play Disabled](assets/images/play%20disabled.png)
 ![Pause Disabled](assets/images/pause-disabled.png)
 
 - The setting button becomes disabled once click to ensure a maximum of one form is created. Once the form is submitted to change the time, it becomes abled.
 ![Set Time Disabled](assets/images/set-time-disabled.png);
 
-- The seconds in the set timer form is limited to 59 and it will send back an error is the user pt a value higher then 59.
+- The seconds in the set timer form is limited to 59 and it will send back an error is the user pt a value higher than 59.
 
-- The second and minutes are always showing with a minimum of 2 numbers in the timer. If a value of 8 mind and 0 secondes is entered in the set timmer form, it will show a value of 08:00.
+- The second and minutes are always showing with a minimum of 2 numbers in the timer. If a value of 8 mind and 0 seconde is entered in the set timer form, it will show a value of 08:00.
 
 ![Double Number](assets/images/double-number.png)
 
@@ -84,7 +84,7 @@ __Goal, Period and Shots__
 
 __Rooster__
 
-- The rooster setting buttons follow the same logic as the set time button of the timer. Once clicked, it is disabled to ensure the user doesn't create more then one form. Once the required information are filled, the form is deleted, the entry is added to the rooster and the rooster setting button is abled.
+- The rooster setting buttons follow the same logic as the set time button of the timer. Once clicked, it is disabled to ensure the user doesn't create more then one form. Once the required informations are filled, the form is deleted, the entry is added to the rooster and the rooster setting button is abled.
 
 ![disabled-add-rooster](assets/images/disabled-add-rooster.png)
 
@@ -104,8 +104,8 @@ __Rooster__
 ![Lighthouse](assets/images/lighthouse.png)
 
 - The performance is the only assessment which has not achieved 100 points. Two main factors explain the lack of performance: 
-    - The CSS files is too heavy. To achieve a perfect performance, CSS file should have been optimised.
-    - The JS files is too heavy. To achieve a perfect performance, JS file should have been optimised. The use of library would greatly improve the performance.
+    - The CSS file is too heavy. To achieve a perfect performance, CSS file should have been optimised.
+    - The JS file is too heavy. To achieve a perfect performance, JS file should have been optimised. The use of library would greatly improve the performance.
 
 
 ### Unfixed Bugs
@@ -127,9 +127,9 @@ The website has been deployed when all functions were tested and were working. F
 
 ## Credits
 
-- The project idea came from a request of my brother who would like his ball hockey website to be updated. The colors represent his hockey league colors.
+- The project idea came from a request of my brother who would like his ball hockey website to be updated. The colours represent his hockey league colours.
 
-- The coding itself was developped using the tool of the course. For details how to run specific functions, the website Stack Overflow was a great help. Please note that no code have been copy/paste from any website. The website were only a tool to understand the mechanic of the code.
+- The coding itself was developed using the tool of the course. For details how to run specific functions, the website Stack Overflow was a great help. Please note that no code has been copy/paste from any website. The website was only a tool to understand the mechanic of the code.
 
 ### Content
 
