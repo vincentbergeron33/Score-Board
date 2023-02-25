@@ -52,7 +52,8 @@ playBtnNode.addEventListener('click', onPlayButtonClick);
 let stop = document.getElementById('stop-time');
 stop.addEventListener('click', stopTime);
 
-ddScoreOneBtnNode.addEventListener('click', incrementScoreTeamOne);
+/*
+addScoreOneBtnNode.addEventListener('click', incrementScoreTeamOne);
 reduceScoreOneBtnNode.addEventListener('click', reduceScoreTeamOne);
 addPeriodBtnNode.addEventListener('click', incrementPeriod);
 reducePeriodBtnNode.addEventListener('click', reducePeriod);
@@ -64,6 +65,7 @@ addShotTwoBtnNode.addEventListener('click', incrementShotTeamTwo);
 reduceShotTwoBtnNode.addEventListener('click', reduceShotTeamTwo);
 roosterSettingOne.addEventListener('click', setRoosterOne);
 roosterSettingTwo.addEventListener('click', setRoosterTwo);
+*/
 
 var intervalRef = null;
 function onPlayButtonClick() {
@@ -120,8 +122,7 @@ function setTimer () {
     subtmitTime.addEventListener("submit", updateTime);
 }
 
-function updateTime(event) {
-    event.preventDefault();   
+function updateTime(event) {  
     var newMins = document.getElementById('setMinutes');
     var newScds = document.getElementById('setSeconds');
     if (parseInt(newScds.value) >= 60) {
@@ -162,81 +163,78 @@ function reduceScoreTeamOne() {
 }
 
 function incrementPeriod() {
-    let i = parseInt(periodNode.innerText);
-    i++;
-    periodNode.innerHTML = i;
+    updateCounter(periodNode, 1)
+    reducePeriodBtnNode.disabled = false;
 
-    if (i==1) {
-        /* Timmer = 10 mins*/
-        alert('Beginning of Period 1!')
+    if (parseInt(periodNode.innerText) === 1) {
         minutesNode.innerHTML = 10;
         secondsNode.innerHTML = '00';
-    } else if (i==2) {
-        /* Timmer = 10 mins*/
-        alert('Beginning of Period 2!')
+    } else if (parseInt(periodNode.innerText) === 2) {
         minutesNode.innerHTML = 10;
         secondsNode.innerHTML = '00';
-    } else if (i==3) {
-        /* Timmer = 10 mins*/
-        alert('Beginning of Period 3!')
+    } else if (parseInt(periodNode.innerText) === 3) {
         minutesNode.innerHTML = 10;
         secondsNode.innerHTML = '00';
-    } else if (i==4) {
-        /* Timmer = 5 mins*/
-        alert('Beginning of Overtime!')
+    } else if (parseInt(periodNode.innerText) === 4) {
         minutesNode.innerHTML = 5;
         secondsNode.innerHTML = '00';
     }
 }
 
 function reducePeriod() {
-    let i = parseInt(periodNode.innerHTML);
-    if (i !== 1) {
-        i--;
-    } else { 
-        alert('Impossible!');
-    }
+    updateCounter(periodNode, -1)
 
-    periodNode.innerHTML = i;
-
-    if (i==1) {
-        /* Timmer = 10 mins*/
-        alert('Beginning of Period 1!')
-    } else if (i==2) {
-        /* Timmer = 10 mins*/
-        alert('Beginning of Period 2!')
-    } else if (i==3) {
-        /* Timmer = 10 mins*/
-        alert('Beginning of Period 3!')
-    } else if (i==4) {
-        /* Timmer = 5 mins*/
-        alert('Beginning of Overtime!')
+    if (parseInt(periodNode.innerText) === 0) {
+    reducePeriodBtnNode.disabled = true;
+    minutesNode.innerHTML = 5;
+    secondsNode.innerHTML = '00';
+    } else if (parseInt(periodNode.innerText) === 1) {
+        minutesNode.innerHTML = 10;
+        secondsNode.innerHTML = '00';
+    } else if (parseInt(periodNode.innerText) === 2) {
+        minutesNode.innerHTML = 10;
+        secondsNode.innerHTML = '00';
+    } else if (parseInt(periodNode.innerText) === 3) {
+        minutesNode.innerHTML = 10;
+        secondsNode.innerHTML = '00';
+    } else if (parseInt(periodNode.innerText) === 4) {
+        minutesNode.innerHTML = 10;
+        secondsNode.innerHTML = '00';
     }
 
 }
 
 function incrementScoreTeamTwo() {
     updateCounter(goalTwoNode, 1);
+    reduceScoreTwoBtnNode.disabled = false;
 }
 
 function reduceScoreTeamTwo() {
     updateCounter(goalTwoNode, -1);
+    if (parseInt(goalTwoNode.innerText) === 0)
+    reduceScoreTwoBtnNode.disabled = true;
 }
 
 function incrementShotTeamOne() {
     updateCounter(shotOneNode, 1);
+    reduceShotOneBtnNode.disabled = false;
 }
 
 function reduceShotTeamOne() {
     updateCounter(shotOneNode, -1);
+    if (parseInt(shotOneNode.innerText) === 0)
+    reduceShotOneBtnNode.disabled = true;
 }
 
 function incrementShotTeamTwo() {
     updateCounter(shotTwoNode, 1);
+    reduceShotTwoBtnNode.disabled = false;
 }
 
 function reduceShotTeamTwo() {
     updateCounter(shotTwoNode, -1);
+    if (parseInt(shotTwoNode.innerText) === 0)
+    reduceShotTwoBtnNode.disabled = true;
 }
 
  /* Set rooster functions*/
@@ -290,7 +288,11 @@ function updateRoosterOne(event) {
     setRoosterOneList.innerHTML = setRoosterOneListHTML;
     document.getElementById('rooster-details-team-1').appendChild(setRoosterOneList);
 
-    document.getElementById('submit-team-one').remove();
+    let divToReplace = createElement('div');
+    let divToReplaceHTML = `<div>replaced</div>`
+    divToReplace.innerHTML = divToReplaceHTML;
+
+    document.getElementById('rooster-setting-team-1').replaceChild(divToReplace, document.getElementById('rooster-setting-team-1').childNodes[0]);
 }
 
 /* Team 2*/
@@ -314,7 +316,7 @@ function setRoosterTwo () {
     let setRoosterTwoInput = document.createElement("form");
     setRoosterTwoInput.id = 'submit-team-two';
     setRoosterTwoInput.innerHTML = setRoosterTwoInputHTML;
-    document.getElementById('rooster-setting-team-2').appendChild(setRoosterTwoInput);
+    document.getElementById('rooster-setting-team-2').replaceChild(setRoosterTwoInput, document.getElementById('rooster-setting-team-2').childNodes[3]);
 
     let subtmitRoosterTwo = document.getElementById('submit-team-two');
     subtmitRoosterTwo.addEventListener("submit", updateRoosterTwo);
