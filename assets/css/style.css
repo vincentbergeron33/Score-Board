@@ -263,11 +263,13 @@ ul {
 #team-1-rooster {
     width:45%;
     height: 100%;
+    float: left;
 }
 
 #team-2-rooster {
     width:45%;
     height: 100%;
+    float: right;
 }
 
  /* Responsive for all size of screen*/

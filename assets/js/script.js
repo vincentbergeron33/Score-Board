@@ -21,8 +21,19 @@ let addShotOneBtnNode = document.getElementById('increment-shot-team-1');
 let reduceShotOneBtnNode = document.getElementById('reduce-shot-team-1');
 let addShotTwoBtnNode = document.getElementById('increment-shot-team-2');
 let reduceShotTwoBtnNode = document.getElementById('reduce-shot-team-2');
-let roosterSettingOne = document.getElementById("rooster-setting-team-1");
-let roosterSettingTwo = document.getElementById("rooster-setting-team-2");
+let roosterSettingOne = document.getElementById("set-rooster-team-1");
+let roosterSettingTwo = document.getElementById("set-rooster-team-2");
+let playBtnNode = document.getElementById('start-time');
+let stop = document.getElementById('stop-time');
+let setTimerBtn = document.getElementById('set-time');
+let setRoosterTeamOneBtn = document.getElementById('set-rooster-team-1');
+let setRoosterTeamTwoBtn = document.getElementById('set-rooster-team-2');
+
+playBtnNode.addEventListener('click', onPlayButtonClick);
+stop.addEventListener('click', stopTime);
+setTimerBtn.addEventListener('click', setTimer);
+setRoosterTeamOneBtn.addEventListener('click', setRoosterOne);
+setRoosterTeamTwoBtn.addEventListener('click', setRoosterTwo);
 
 document.addEventListener('DOMContentLoaded', function() {
     minutesNode.innerHTML = 5;
@@ -47,25 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
 /**
  * The function will start the timbreak when the stop button is clicked
  */
-let playBtnNode = document.getElementById('start-time');
-playBtnNode.addEventListener('click', onPlayButtonClick);
-let stop = document.getElementById('stop-time');
-stop.addEventListener('click', stopTime);
-
-/*
-addScoreOneBtnNode.addEventListener('click', incrementScoreTeamOne);
-reduceScoreOneBtnNode.addEventListener('click', reduceScoreTeamOne);
-addPeriodBtnNode.addEventListener('click', incrementPeriod);
-reducePeriodBtnNode.addEventListener('click', reducePeriod);
-addScoreTwoBtnNode.addEventListener('click', incrementScoreTeamTwo);
-reduceScoreTwoBtnNode.addEventListener('click', reduceScoreTeamTwo);
-addShotOneBtnNode.addEventListener('click', incrementShotTeamOne);
-reduceShotOneBtnNode.addEventListener('click', reduceShotTeamOne);
-addShotTwoBtnNode.addEventListener('click', incrementShotTeamTwo);
-reduceShotTwoBtnNode.addEventListener('click', reduceShotTeamTwo);
-roosterSettingOne.addEventListener('click', setRoosterOne);
-roosterSettingTwo.addEventListener('click', setRoosterTwo);
-*/
 
 var intervalRef = null;
 function onPlayButtonClick() {
@@ -83,7 +75,6 @@ function onPlayButtonClick() {
                 seconds--;
                 secondsNode.innerHTML = String(seconds).padStart(2, "0");
         } else if (parseInt(seconds) === 0 && parseInt(minutes) === 0) {
-            alert('end of period!')
             secondsNode.innerHTML = '00';
             clearInterval(intervalRef);
         }
@@ -102,45 +93,39 @@ function stopTime() {
 /**
  * Once clicked the function will create 2 input with a submit button
  */
-let setTimerBtn = document.getElementById('set-time');
-setTimerBtn.addEventListener('click', setTimer);
+
 function setTimer () {
     let setTimerInputHTML = `
-        <label for="setMinutes">Minutes</label>
+        <label for="setMinutes" min='0' >Minutes</label>
         <input id="setMinutes" type="number" required>
         <label for="setSeconds" required>Seconds</label>
-        <input id="setSeconds" type="number" required>
+        <input id="setSeconds" type="number" min='0' max='59' required>
         <input type='submit'></submit>
         `
     
     let setTimerInput = document.createElement("form");
     setTimerInput.id = 'submit-time';
     setTimerInput.innerHTML = setTimerInputHTML;
-    document.getElementById('control-time').replaceChild(setTimerInput, document.getElementById('control-time').childNodes[0]);
-
+    document.getElementById('control-time').appendChild(setTimerInput);
     let subtmitTime = document.getElementById('submit-time');
     subtmitTime.addEventListener("submit", updateTime);
+    setTimerBtn.disabled = true;
 }
 
 function updateTime(event) {  
     var newMins = document.getElementById('setMinutes');
     var newScds = document.getElementById('setSeconds');
-    if (parseInt(newScds.value) >= 60) {
-        alert('Impossible, please enter valid time!');
-    } else if (parseInt(newMins.value) >= 100) {
-        alert('Be carefull of exhaustion, the game is way too long!');
-        minutesNode.innerHTML = newMins.value;
-        secondsNode.innerHTML = newScds.value;
-        document.getElementById('submit-time').remove(); ; 
-    } else {
-        minutesNode.innerHTML = newMins.value;
-        secondsNode.innerHTML = newScds.value;
-        document.getElementById('submit-time').remove(); 
-    }
+    minutesNode.innerHTML = String(newMins.value).padStart(2,'0');
+    secondsNode.innerHTML = String(newScds.value).padStart(2,'0');
+    document.getElementById('submit-time').remove();
+    setTimerBtn.disabled = false;
+    String(seconds).padStart(2, "0");
 }
 
 
-
+/**
+ * The function is called by the increment/reduce functions to add or remove UpdateValue to the number
+ */
 function updateCounter(scoreDiv, updateValue) {
     let i = parseInt(scoreDiv.innerHTML);
     i = i + updateValue;
@@ -148,9 +133,6 @@ function updateCounter(scoreDiv, updateValue) {
 }
 
 
-/**
- * The function will increment the score of team 1
- */
 function incrementScoreTeamOne() {
     updateCounter(goalOneNode, 1)
     reduceScoreOneBtnNode.disabled = false;
@@ -238,12 +220,7 @@ function reduceShotTeamTwo() {
 }
 
  /* Set rooster functions*/
-
-
 /* Team 1*/
-
-let setRoosterTeamOneBtn = document.getElementById('set-rooster-team-1');
-setRoosterTeamOneBtn.addEventListener('click', setRoosterOne);
 
 /**
  * Set the rooster for team1 - Add the HTML form
@@ -263,11 +240,11 @@ function setRoosterOne () {
     let setRoosterOneInput = document.createElement("form");
     setRoosterOneInput.id = 'submit-team-one';
     setRoosterOneInput.innerHTML = setRoosterOneInputHTML;
-    document.getElementById('rooster-setting-team-1').replaceChild(setRoosterOneInput, document.getElementById('rooster-setting-team-1').childNodes[0]);
+    document.getElementById('rooster-setting-team-1').appendChild(setRoosterOneInput);
 
     let subtmitRoosterOne = document.getElementById('submit-team-one');
     subtmitRoosterOne.addEventListener("submit", updateRoosterOne);
-
+    roosterSettingOne.disabled = true;
 }
 
 /** 
@@ -287,18 +264,12 @@ function updateRoosterOne(event) {
     `
     setRoosterOneList.innerHTML = setRoosterOneListHTML;
     document.getElementById('rooster-details-team-1').appendChild(setRoosterOneList);
-
-    let divToReplace = createElement('div');
-    let divToReplaceHTML = `<div>replaced</div>`
-    divToReplace.innerHTML = divToReplaceHTML;
-
-    document.getElementById('rooster-setting-team-1').replaceChild(divToReplace, document.getElementById('rooster-setting-team-1').childNodes[0]);
+    document.getElementById('submit-team-one').remove();
+    roosterSettingOne.disabled = false;
 }
 
 /* Team 2*/
 
-let setRoosterTeamTwoBtn = document.getElementById('set-rooster-team-2');
-setRoosterTeamTwoBtn.addEventListener('click', setRoosterTwo);
 /**
  * Add the form to submit the player 2 details
  */
@@ -316,10 +287,11 @@ function setRoosterTwo () {
     let setRoosterTwoInput = document.createElement("form");
     setRoosterTwoInput.id = 'submit-team-two';
     setRoosterTwoInput.innerHTML = setRoosterTwoInputHTML;
-    document.getElementById('rooster-setting-team-2').replaceChild(setRoosterTwoInput, document.getElementById('rooster-setting-team-2').childNodes[3]);
+    document.getElementById('rooster-setting-team-2').appendChild(setRoosterTwoInput);
 
     let subtmitRoosterTwo = document.getElementById('submit-team-two');
     subtmitRoosterTwo.addEventListener("submit", updateRoosterTwo);
+    roosterSettingTwo.disabled = true;
 
 }
 
@@ -342,5 +314,7 @@ function updateRoosterTwo(event) {
     document.getElementById('rooster-details-team-2').appendChild(setRoosterTwoList);
 
     document.getElementById('submit-team-two').remove();
+
+    roosterSettingTwo.disabled = false;
 }
 
