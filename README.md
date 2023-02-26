@@ -68,7 +68,7 @@ __Timer testing__
 ![Pause Disabled](assets/images/pause-disabled.png)
 
 - The setting button becomes disabled once click to ensure a maximum of one form is created. Once the form is submitted to change the time, it becomes abled.
-![Set Time Disabled](assets/images/set-time-disabled.png);
+![Set Time Disabled](assets/images/set-time-disabled.png)
 
 - The seconds in the set timer form is limited to 59 and it will send back an error is the user pt a value higher than 59.
 
