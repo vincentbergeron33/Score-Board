@@ -1,6 +1,6 @@
 # Hockey Score Board
 
-The website is a useful scoreboard. The scoreboard is set to the ball hockey timing rules but can easily use for any kind of sports as the functions have been developed to accept all kind of data numbers. It has been designed to be simple and easy to use for the user. In case the user did a mistake, he/she can easily correct it by clicking to the opposite button. It fits for all size of media, but I strongly suggest to use a desktop so the user can share his screen on a tv by example so all players can see the time running down.
+The website is a useful scoreboard. The scoreboard is set to the ball hockey timing rules but can easily use for any kind of sports as the functions have been developed to accept all kind of data numbers. It has been designed to be simple and easy to use for the user. In case the user did a mistake, he/she can easily correct it by clicking to the opposite button. It fits for all size of media, but I strongly suggest using a desktop so the user can share his screen on a tv by example so all players can see the time running down.
 
 ![Am I Responsive](assets/images/amiresponsive.png)
 
@@ -13,36 +13,36 @@ The website is a simple ball hockey Score board with program time for each perio
 __Timer__
 
 - The timer is the biggest object in the page to ensure all players can see the time. The timer has 3 functions:
-    - Set Time: By click on the setting button, the user can modify the time. If the value of second exceeds 60, an error message is sent to the user. If the value of minutes exceed 100, an alert message is sent to the user telling him that the game is way too long but the command is still executed to accommodate user who would like to set up the timer for a 2 hours free play by example.
-    - Play time: The timer starts going down by one second for every tick.
-    - Stop time: The timer stops ticking.
+    - Set Time: By click on the setting button, the user can modify the time. The value for the minutes is unlimited but the value for the seconds is limited between 0 and 59.
+    - Play time: The timer starts going down by one second for every tick. When the page loads, the pause button is disabled. When the play button is clicked, it becomes disabled and, the pause button is abled.
+    - Pause time: The timer stops ticking. Once the pause button is clicked, it becomes disabled, and the play button is abled.
 
 ![Score Board](assets/images/scoreboard.png)
 ![Score Board Setting](assets/images/scoreboard-setting.png)
 
 __Goal panel__
 
-- The goal panels are shown on each side for each team. The user can add/remove a goal to/from each team.
+- The goal panels are shown on each side for each team. The user can add/remove a goal to/from each team. When the value is 0, the minus button is disabled.
 
 ![Goal Panel](assets/images/goal-team-1.png)
 ![Goal Panel](assets/images/goal-team-2.png)
 
 __Period Panel__
 
-- The period panel is between the goal panel of each team. It is initially set to 0. If the user tries to remove a period when it is at 0, it will send an error message 'Impossible!'. When the user increases the period to 1,2 & 3, the time will be set to 10 minutes and an alert message is sent stating 'Beginning or Period 1/2/3. When the user increase to period 4, the message is 'Beginning of overtime!' and the time is set to 5 mins.
+- The period panel is between the goal panel of each team. It is initially set to 0 and 5 minutes on the timer. When the user increases the period to 1,2 & 3, the time will be set to 10 minutes. When the user increase to period 4 and the time is set to 5 mins. This is to represent a free play at the period 0 for player to practice shots and goalkeeper to warm up. Then the periods start which are 10 minutes in normal hockey ball league. The period 4 represent an overtime which are normally 5 minutes. When the value is 0, the minus button is disabled.
 
 
 ![Period Panel](assets/images/period.png)
 
 __Shot panel__
 
-- The shot panels are shown on each side for each team. The user can add/remove a shot to/from each team. 
+- The shot panels are shown on each side for each team. The user can add/remove a shot to/from each team. When the value is 0, the minus button is disabled.
 
 ![Shot Panel](assets/images/shot.png)
 
 __Rooster Panel__
 
-- The Rooster panels are shown on each side for each team. The user can add the rooster of each team. When the button is clicked, a form is added to the div setting. 3 entries are required before submitting the form: the player #, player first name and player last name. Once submitted, the form is removed from the div setting the information of the player are added to the div rooster.
+- The Rooster panels are shown on each side for each team. The user can add the rooster of each team. When the button is clicked, a form is added to the div setting. 3 entries are required before submitting the form: the player #, player first name and player last name. Once submitted, the form is removed from the div setting the information of the player are added to the div rooster. The rooster ppanel is disabled while filling the form to avoid adding multiple form to the score board.
 
 
 ![Rooster Panel](assets/images/rooster.png)
