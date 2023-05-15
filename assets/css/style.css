@@ -25,6 +25,10 @@ body {
     font-size: 1vw;
  }
 
+ h3 {
+    text-decoration: underline;
+ }
+
 ul {
     list-style-type: none;
 }
@@ -51,14 +55,14 @@ ul {
 }
  #timer {
     width: 90%;
-    height: 80%;
+    height: 70%;
     margin: auto;
     font-size: 10vw;
  }
 
  #control-time {
     width: 100%;
-    height: 20%;
+    height: 30%;
     margin: auto;
     font-size: 1vw;
  }
@@ -272,6 +276,20 @@ ul {
     float: right;
 }
 
+/* instruction how to use scoreboard */
+
+#instruction-container {
+    font-family: lato, sans-serif;
+}
+
+#explanations li {
+    margin-bottom: 5px;
+}
+
+#explanations li li {
+    margin: 0;
+}
+
  /* Responsive for all size of screen*/
 
  @media (max-width: 1300px) {
@@ -286,13 +304,13 @@ ul {
         height: 14vw;
     }
 
-    #penality-panel {
-        height: 22vw;
-    }
-
     #goal-team-1, #period-number, #goal-team-2, #shot-team-1-number, #shot-team-2-number {
         font-size: 6vw;
     }
+
+    .btn {
+        font-size: 2vw;
+     }
 
  }
 
@@ -308,22 +326,19 @@ ul {
         height: 19vw;
     }
 
-    #penality-panel {
-        height: 25vw;
-    }
-
     #goal-team-1, #period-number, #goal-team-2, #shot-team-1-number, #shot-team-2-number {
         font-size: 8vw;
     }
+
  }
 
  @media (max-width: 855px) {
     #time-panel {
-        height: 15vw;
+        height: 20vw;
     }
 
     #score-and-period {
-        height: 50vw;
+        height: 55vw;
     }
 
     #score-and-period > div {
@@ -335,10 +350,6 @@ ul {
         height: 25%;
     }
 
-    #border-goal-team-1 {
-        width: 15%;
-        height: 90%;
-    }
 
     #period {
         width:100%;
@@ -346,28 +357,56 @@ ul {
         margin-top: 5%;
     }
 
-    #border-period {
-        width: 15%;
-        height: 90%;
-    }
-
     #score-team-2 {
         width:100%;
         height: 25%;
         margin-top: 5%;
     }
-
-    #border-goal-team-2 {
-        width: 15%;
-        height: 90%;
-    }
     
 
     #shot-panel {
-        height: 17vw;
+        height: 20vw;
     }
 
-    #penality-panel {
-        height: 23vw;
+    #rooster {
+        height: 25vw;
+    }
+
+
+    #border-goal-team-1, #border-period, #border-goal-team-2, #border-shot-team-1, #border-shot-team-2 {
+        width: 40%;
+        height: 90%;
+        text-align: center;
+    }
+
+    .btn {
+        color:blue;
+        margin: auto;
+        font-size: 3vw;
+     }
+
+     #goal-team-1, #adjust-score-team-1, #goal-team-2, #adjust-score-team-2,
+      #period-number, #adjust-period {
+        display: inline-block;
+        text-align: center;
+        margin: auto;
+        width: 20%;
+        height: 100%;
+        margin-top: 2%;
+     }
+
+ }
+
+ @media (max-width: 600px) {
+    #time-panel {
+        height: 25vw;
+    }
+
+    #score-and-period {
+        height: 60vw;
+    }
+
+    #shot-panel {
+        height: 22vw;
     }
  }

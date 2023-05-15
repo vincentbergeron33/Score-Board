@@ -11,6 +11,9 @@
 </head>
 <body>
     <section id="scoreboard">
+<!-- This section is taking 100% of the page and is displaying the timer, period scores, shots and rooster for both team.
+The timer is the first feature and is the biggest one on the screen as players need to see the time from the bench when they are
+ playing the game. It will show the time and 3 buttons: set time, play timer, stop timer. -->
         <h1>Scoreboard</h1>
         <div id="time-panel">
 
@@ -31,7 +34,9 @@
         </div>
 
         <div id="score-and-period">
-
+<!-- This div is divided in 3 blocks: Score for team 1, Period number and score for team 2. The user
+is able to increase or decrease the number using the appropriate button (+ or -). Button - is disabled when
+the number is 0.-->
             <div id="score-team-1">
                 <h2>Score Team 1</h2>
                 <div id="border-goal-team-1">
@@ -80,6 +85,8 @@
         </div>
 
         <div id="shot-panel">
+<!-- This div display the shots for each team.  The useris able to increase or decrease the number
+ using the appropriate button (+ or -). Button - is disabled when the number is 0.-->
 
             <div id="shot-team-1">
                 <h2>Shot Team 1</h2>
@@ -112,8 +119,11 @@
             </div>
 
         </div>
-
+    </section>
+    <section>
         <div id="rooster">
+<!-- This div is showing the rooster of each team. Once clicked, a form is shown and once filled and 
+submit show the player information into the div. The button is disabled while the form is being filled.-->
 
             <div id="team-1-rooster">
                 <div id="rooster-setting-team-1">
@@ -135,6 +145,47 @@
 
             </div>
         </div>
+
+    </section>
+    <section>
+<!-- This section explains to the user how to use the scoreboard-->
+        <div id="instruction-container">
+            <div id="instruction">
+                <h3>How to use the scoreboard</h3>
+                <ul id="explanations">
+                    <li><Strong>Timer:</Strong> The scoreboard have a programed time for each period:
+                    <ul>
+                        <li>Period 0: 5 mins, This is to allowed time for the player to practice before the game starts.</li>
+                        <li>Period 1, 2 & 3: 10 mins, Regular time for a period in ball hockey.</li>
+                        <li>Period 4+: 5 mins, Regular time for a overtime period.</li>
+                    </ul>
+                    3 buttons are shown on the timer. From left to right, the first button is to set the time. Once clicked the
+                    user can modify the time by entering it manually. The play button to start the timer. Finally, the stop button
+                    to stop the time.
+                    </li>
+                    <li>
+                        <strong>Score:</strong> The user can increase or decrease the score of team 1 or 2 by clicking the 
+                        + or - . The score can not be lower than 0.
+                    </li>
+                    <li>
+                        <strong>Period:</strong> See above programed time for each period. The user can increase 
+                        or decrease the score of team 1 or 2 by clicking the + or - . The period can not be lower than 0.
+                    </li>
+                    <li>
+                        <strong>Shot:</strong> The user can increase or decrease the shot of team 1 or 2 by clicking the 
+                        + or - . The score can not be lower than 0. 
+                    </li>
+                    <li>
+                        <strong>Rooster:</strong> By clicking the button with an user +, the user can add the number and name of
+                        a player. Once it is submited, the player is added in the rooster. The user can only enter one player at 
+                        a time.
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
 
     </section>
     <script src="assets/js/script.js"></script>
