@@ -298,7 +298,7 @@ ul {
 
  @media (max-width: 1300px) {
     #time-panel {
-        height: 15vw;
+        height: 18vw;
     }
 
     #score-and-period {
@@ -325,7 +325,8 @@ ul {
      }
     
     #time-panel {
-        height: 15vw;
+        height: 18vw;
+        margin-bottom: 20px;
     }
 
     #score-and-period {
@@ -339,11 +340,16 @@ ul {
         font-size: 8vw;
     }
 
+    label {
+        font-size: 1.5vw;
+       }
+
  }
 
  @media (max-width: 855px) {
     #time-panel {
         height: 20vw;
+        margin-bottom: 80px;
     }
 
     #score-and-period {
@@ -405,6 +411,21 @@ ul {
         margin-top: 2%;
      }
 
+     #setMinutes, #setSeconds {
+        width: 50%;
+        margin: auto;
+       }
+    
+       label {
+        font-size: 2vw;
+        display: block;
+       }
+
+       input {
+        display: block;
+        margin: auto;
+       }
+
  }
 
  @media (max-width: 600px) {
@@ -434,6 +455,7 @@ ul {
     
     #time-panel {
         height: 22vw;
+        margin-bottom: 85px;
     }
 
     #score-and-period {
@@ -457,7 +479,8 @@ ul {
      }
 
     #time-panel {
-        height: 24vw;
+        height: 27vw;
+        margin-bottom: 80px;
     }
 
     #score-and-period {
@@ -477,4 +500,15 @@ ul {
    #border-shot-team-1, #border-shot-team-2 {
     width: 70%;
    }
+
+   #setMinutes, #setSeconds {
+    width: 50%;
+   }
+
+   label {
+    font-size: 3.5vw;
+    display: block;
+   }
+   
+
  }
