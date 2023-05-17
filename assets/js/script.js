@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     reduceScoreTwoBtnNode.disabled = true;
     reduceShotOneBtnNode.disabled = true;
     reduceShotTwoBtnNode.disabled = true;
-})
+});
 
 
 /**
@@ -65,7 +65,7 @@ function onPlayButtonClick() {
     var minutes = parseInt(minutesNode.innerHTML);
     var seconds = parseInt(secondsNode.innerHTML);
     console.log(minutes, seconds, stop);
-        if (seconds === 0 & minutes !== 0) {
+        if (seconds === 0 && minutes !== 0) {
                 seconds = 59;
                 minutes--;
                 console.log(minutes, seconds);
@@ -78,7 +78,7 @@ function onPlayButtonClick() {
             secondsNode.innerHTML = '00';
             clearInterval(intervalRef);
         }
-    }, 1000)
+    }, 1000);
     playBtnNode.disabled = true;
     stop.disabled = false;
 }
@@ -101,7 +101,7 @@ function setTimer () {
         <label for="setSeconds" required>Seconds</label>
         <input id="setSeconds" type="number" min='0' max='59' required>
         <input type='submit'></submit>
-        `
+        `;
     
     let setTimerInput = document.createElement("form");
     setTimerInput.id = 'submit-time';
@@ -134,18 +134,18 @@ function updateCounter(scoreDiv, updateValue) {
 
 
 function incrementScoreTeamOne() {
-    updateCounter(goalOneNode, 1)
+    updateCounter(goalOneNode, 1);
     reduceScoreOneBtnNode.disabled = false;
 }
 
 function reduceScoreTeamOne() {
-    updateCounter(goalOneNode, -1)
+    updateCounter(goalOneNode, -1);
     if (parseInt(goalOneNode.innerText) === 0)
     reduceScoreOneBtnNode.disabled = true;
 }
 
 function incrementPeriod() {
-    updateCounter(periodNode, 1)
+    updateCounter(periodNode, 1);
     reducePeriodBtnNode.disabled = false;
 
     if (parseInt(periodNode.innerText) === 1) {
@@ -164,7 +164,7 @@ function incrementPeriod() {
 }
 
 function reducePeriod() {
-    updateCounter(periodNode, -1)
+    updateCounter(periodNode, -1);
 
     if (parseInt(periodNode.innerText) === 0) {
     reducePeriodBtnNode.disabled = true;
@@ -235,7 +235,7 @@ function setRoosterOne () {
         <label for="team-one-lname">Last Name</label>
         <input id="team-one-lname" type="text" required>
         <input type='submit'></submit>
-        `
+        `;
     
     let setRoosterOneInput = document.createElement("form");
     setRoosterOneInput.id = 'submit-team-one';
@@ -261,7 +261,7 @@ function updateRoosterOne(event) {
     let setRoosterOneList = document.createElement('ul');
     let setRoosterOneListHTML = `
         <li>#${playerNumber}  ${playerFirstName}  ${playerLastName}</li>
-    `
+    `;
     setRoosterOneList.innerHTML = setRoosterOneListHTML;
     document.getElementById('rooster-details-team-1').appendChild(setRoosterOneList);
     document.getElementById('submit-team-one').remove();
@@ -282,7 +282,7 @@ function setRoosterTwo () {
         <label for="team-two-lname">Last Name</label>
         <input id="team-two-lname" type="text" required>
         <input type='submit'></submit>
-        `
+        `;
     
     let setRoosterTwoInput = document.createElement("form");
     setRoosterTwoInput.id = 'submit-team-two';
@@ -309,7 +309,7 @@ function updateRoosterTwo(event) {
     let setRoosterTwoList = document.createElement('ul');
     let setRoosterTwoListHTML = `
         <li>#${playerNumberTwo}  ${playerFirstNameTwo}  ${playerLastNameTwo}</li>
-    `
+    `;
     setRoosterTwoList.innerHTML = setRoosterTwoListHTML;
     document.getElementById('rooster-details-team-2').appendChild(setRoosterTwoList);
 
