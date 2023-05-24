@@ -88,6 +88,9 @@ __Rooster__
 
 ![disabled-add-rooster](assets/images/disabled-add-rooster.png)
 
+__Instructions__
+
+- Finaly, there are instructions in the bottom of the page to ensure the user can understand all functions of the Score Board. 
 
 ### Validator Testing
 
@@ -100,6 +103,8 @@ __Rooster__
 ![CSS validator](assets/images/css-validator.png)
 
 - Lighthouse has been run through all the pages, see the below result:
+
+- JSHint has been run through all the JavaScript. Only minor warnings have been highlighted in the code.
 
 ![Lighthouse](assets/images/lighthouse.png)
 

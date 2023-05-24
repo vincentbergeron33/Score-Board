@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /**
- * The function will start the timbreak when the stop button is clicked
+ * The function start the timer when the play button is clicked 
  */
 
 var intervalRef = null;
@@ -83,6 +83,9 @@ function onPlayButtonClick() {
     stop.disabled = false;
 }
 
+/**
+ * The function stop the timer when the stop button is clicked
+ */
 function stopTime() {
     clearInterval(intervalRef);
     intervalRef = null;
